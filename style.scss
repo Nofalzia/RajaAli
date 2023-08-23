@@ -1,0 +1,84 @@
+$accent: #d1ebfc;
+$background: rgb(42, 42, 42);
+$mobile: 450px;
+$tablet:750;
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+body {
+  background: $background;
+  width: 100vw;
+  height: 150vh;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Work Sans', sans-serif;
+}
+  
+// .background-video {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+//   z-index: 2;
+
+//   video {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// }
+
+.content {
+  position: relative;
+  z-index: 0; /* Place content above the video */
+  /* Additional styling for your content */
+}
+
+.gallery1 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+.Heading{
+  font-size: 4rem;
+  color: $accent;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  z-index: 0;
+  rotate: 270deg;
+  margin: 0;
+}
+#image-track {
+  display: flex;
+  gap: 4vmin; 
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  user-select: none; /* -- Prevent image highlighting -- */
+  z-index: 0;
+} 
+
+ @media screen and (max-width:$tablet) {
+  #image-track{
+    left: 50% !important;
+  }
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+.hidden{
+  opacity: 0;
+}
+.show{
+  opacity: 1;
+}
