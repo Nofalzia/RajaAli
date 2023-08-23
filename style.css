@@ -75,7 +75,7 @@ nav a {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none; /* -- Prevent image highlighting -- */
-  z-index: 0;
+  z-index: 5;
 }
 
 @media screen and (max-width: 750) {
