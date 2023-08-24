@@ -168,4 +168,25 @@ header h5 {
 
 .gallery-wrapper {
   position: relative;
+}
+
+.container {
+  margin-inline: auto;
+  width: calc(100vw - 20%);
+}
+
+.vid-gallery .wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr;
+}
+.vid-gallery .wrapper .vids {
+  height: 100%;
+  width: 100%;
+}
+.vid-gallery .wrapper .vids video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */
