@@ -1,7 +1,4 @@
-/* Variables */
-/* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap");
-/* Base styles */
 body {
   background: #1B191B;
   width: 100vw;
@@ -15,7 +12,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Navigation */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 nav {
   position: absolute;
   top: 20px;
@@ -37,7 +40,7 @@ nav ul li {
 nav ul a {
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 25px;
   display: inline-block;
   padding: 7px 5px;
   border: 2px solid transparent;
@@ -46,10 +49,9 @@ nav ul a {
   font-weight: normal;
 }
 nav ul a:hover {
-  font-size: 130%;
+  font-size: 180%;
 }
 
-/* Header */
 header {
   position: absolute;
   top: calc(100vh - 50%);
@@ -60,21 +62,20 @@ header {
   color: white;
 }
 header h1 {
-  font-size: 60px;
+  font-size: 75px;
   margin-bottom: 5px;
 }
 header h5 {
+  font-size: 17px;
   font-weight: normal;
   margin-top: 5px;
 }
 
-/* Content */
 .content {
   position: relative;
   z-index: 0;
 }
 
-/* Video */
 .video-wrapper {
   position: relative;
 }
@@ -103,7 +104,6 @@ header h5 {
   z-index: -1;
 }
 
-/* Gallery */
 .gallery-wrapper {
   position: relative;
 }
@@ -111,8 +111,22 @@ header h5 {
   margin-inline: auto;
   width: calc(100vw - 20%);
 }
+.gallery-wrapper .vid-gallery .wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr;
+}
+.gallery-wrapper .vid-gallery .wrapper .vids {
+  height: 100%;
+  width: 100%;
+}
+.gallery-wrapper .vid-gallery .wrapper .vids video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
-/* Additional styles */
 .gallery1 {
   position: relative;
   height: 100vh;
@@ -121,7 +135,7 @@ header h5 {
 
 .Heading {
   font-size: 4rem;
-  color: #8b0000;
+  color: #FF1D50;
   position: absolute;
   left: 10%;
   top: 50%;
@@ -144,7 +158,7 @@ header h5 {
   z-index: 5;
 }
 
-@media screen and (max-width: 750) {
+@media screen and (max-width: 750px) {
   #image-track {
     left: 50% !important;
   }
@@ -164,4 +178,28 @@ header h5 {
 
 .show {
   opacity: 1;
+}
+
+@media screen and (max-width: 450px) {
+  nav ul li a {
+    font-size: 16px;
+  }
+  header h1 {
+    font-size: 40px;
+  }
+  header h5 {
+    font-size: 10px;
+  }
+  .gallery-wrapper .Heading {
+    font-size: 2rem;
+  }
+  #image-track {
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    gap: 2vmin;
+  }
+  #image-track > .image {
+    width: 32vmin;
+    height: 45vmin;
+  }
 }/*# sourceMappingURL=style.css.map */
