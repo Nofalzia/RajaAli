@@ -4,13 +4,15 @@ const heading = document.getElementById("Heading");
 var trackRect = track.getBoundingClientRect();
 var headingRect = heading.getBoundingClientRect();
 
-if(trackRect.bottom > headingRect.top 
-  && trackRect.right > headingRect.left 
-  && trackRect.top < headingRect.bottom 
-  && trackRect.left < headingRect.right) {
-      heading.classList.add("selected");
-      console.log("nofal is gay")
-  }
+if (
+  trackRect.bottom > headingRect.top &&
+  trackRect.right > headingRect.left &&
+  trackRect.top < headingRect.bottom &&
+  trackRect.left < headingRect.right
+) {
+  heading.classList.add("selected");
+  console.log("nofal");
+}
 
 const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
 
@@ -49,7 +51,7 @@ const handleOnMove = (e) => {
   }
 };
 
-/* -- Had to add extra lines for touch events -- */
+/* -- Adding touch event listeners -- */
 
 window.onmousedown = (e) => handleOnDown(e);
 
@@ -62,11 +64,3 @@ window.ontouchend = (e) => handleOnUp(e.touches[0]);
 window.onmousemove = (e) => handleOnMove(e);
 
 window.ontouchmove = (e) => handleOnMove(e.touches[0]);
-
-
-
-//blog mouse shit
-
-
-
-
