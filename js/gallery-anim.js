@@ -64,3 +64,45 @@ window.ontouchend = (e) => handleOnUp(e.touches[0]);
 window.onmousemove = (e) => handleOnMove(e);
 
 window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+
+
+const videos = document.querySelectorAll('.vids video');
+const videoWrappers = document.querySelectorAll('.vids');
+
+videos.forEach((video, index) => {
+  video.addEventListener('mouseover', () => {
+    video.play();
+  });
+
+  video.addEventListener('mouseout', () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+
+  videoWrappers[index].addEventListener('click', () => {
+    if (!videoWrappers[index].classList.contains('expanded')) {
+      // Expand the video
+      videoWrappers[index].classList.add('expanded');
+      video.play();
+      
+      // Hide other videos
+      videoWrappers.forEach((wrapper, i) => {
+        if (i !== index) {
+          wrapper.style.display = 'none';
+        }
+      });
+    } else {
+      // Shrink the video
+      videoWrappers[index].classList.remove('expanded');
+      video.pause();
+      video.currentTime = 0;
+      
+      // Show other videos
+      videoWrappers.forEach((wrapper) => {
+        wrapper.style.display = 'block';
+      });
+    }
+  });
+
+  video.pause();
+});

@@ -127,6 +127,48 @@ header h5 {
      object-fit: cover;
 }
 
+/* Video Gallery Section */
+.vid-gallery {
+  margin-top: 100px;
+  text-align: center;
+}
+.vid-gallery h2 {
+  font-size: 2rem;
+  color: #FF1D50;
+  margin-bottom: 20px;
+}
+.vid-gallery .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.vid-gallery .wrapper .vids {
+  position: relative;
+  cursor: pointer;
+}
+.vid-gallery .wrapper .vids video {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s ease;
+  max-height: 100%;
+  display: block;
+}
+.vid-gallery .wrapper .vids.expanded {
+  grid-column: span 3;
+}
+.vid-gallery .wrapper .vids.expanded video {
+  height: 100%;
+  transition: all 0.5s ease; /* Add transition for animation */
+}
+.vid-gallery .wrapper .vids:not(.expanded) video {
+  transform: scale(1); /* Initial state for non-expanded videos */
+}
+.vid-gallery .wrapper .vids:hover video {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
 .gallery1 {
   position: relative;
   height: 100vh;

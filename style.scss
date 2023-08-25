@@ -156,6 +156,57 @@ header {
   }
 }
 
+/* Video Gallery Section */
+.vid-gallery {
+  margin-top: 100px;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    color: $accent;
+    margin-bottom: 20px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .vids {
+      position: relative;
+      cursor: pointer;
+
+      video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: all 0.3s ease;
+        max-height: 100%;
+        display: block;
+      }
+
+      &.expanded {
+        grid-column: span 3;
+        video {
+          height: 100%;
+          transition: all 0.5s ease; /* Add transition for animation */
+        }
+      }
+
+      &:not(.expanded) video {
+        transform: scale(1); /* Initial state for non-expanded videos */
+      }
+
+      &:hover video {
+        transform: scale(1.1); /* Scale up on hover */
+      }
+    }
+  }
+}
+
+
+
+
 // Additional styles
 .gallery1 {
   position: relative;
