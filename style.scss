@@ -34,7 +34,7 @@ body, html {
 nav {
   position: absolute;
   top: 20px;
-  z-index: 1;
+  z-index: 10000;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -61,12 +61,34 @@ nav {
       border-radius: 15%;
       font-weight: normal;
 
+      &:hover,
+      &:active {
+        color: $blob-color-1; /* Change the color on hover */
+      }
+    
+      /* Add the following pseudo-element */
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: $accent;
+        transition: width 0.3s ease-in-out;
+      }
+    
+      &:hover::after,
+      &:active::after {
+        width: 100%;
+      }
+    }
       &:hover {
-        font-size: 180%;
+        text-decoration: underline;
       }
     }
   }
-}
 
 // Header
 header {
@@ -122,7 +144,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: -1;
   }
 }
@@ -170,19 +192,23 @@ header {
   .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 0; /* Remove the gap between videos */
+    width: 100%; /* Make the wrapper span the entire width */
 
     .vids {
       position: relative;
       cursor: pointer;
+      margin: 0; /* Remove any margin */
+      height: auto; /* Reset the height */
 
       video {
-        width: 100%;
-        height: auto;
+        width: 100%; /* Make the video span the entire width */
+        height: 100%; /* Make the video span the entire height of its container */
         object-fit: cover;
         transition: all 0.3s ease;
         max-height: 100%;
         display: block;
+        transform: none; /* Remove the scaling transform */
       }
 
       &.expanded {
@@ -193,16 +219,31 @@ header {
         }
       }
 
-      &:not(.expanded) video {
-        transform: scale(1); /* Initial state for non-expanded videos */
-      }
+    }}}
 
-      &:hover video {
-        transform: scale(1.1); /* Scale up on hover */
-      }
-    }
-  }
+/*video overlay */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
+
+.vids:hover .video-overlay {
+  opacity: 1;
+}
+
 
 
 

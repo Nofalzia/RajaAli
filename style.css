@@ -22,7 +22,7 @@ body, html {
 nav {
   position: absolute;
   top: 20px;
-  z-index: 1;
+  z-index: 10000;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -47,9 +47,27 @@ nav ul a {
   transition: all 0.1s;
   border-radius: 15%;
   font-weight: normal;
+  /* Add the following pseudo-element */
 }
-nav ul a:hover {
-  font-size: 180%;
+nav ul a:hover, nav ul a:active {
+  color: #FF1D50; /* Change the color on hover */
+}
+nav ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #FF1D50;
+  transition: width 0.3s ease-in-out;
+}
+nav ul a:hover::after, nav ul a:active::after {
+  width: 100%;
+}
+nav ul:hover {
+  text-decoration: underline;
 }
 
 header {
@@ -100,7 +118,7 @@ header h5 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: -1;
 }
 
@@ -140,20 +158,24 @@ header h5 {
 .vid-gallery .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 0; /* Remove the gap between videos */
+  width: 100%; /* Make the wrapper span the entire width */
 }
 .vid-gallery .wrapper .vids {
   position: relative;
   cursor: pointer;
+  margin: 0; /* Remove any margin */
+  height: auto; /* Reset the height */
 }
 .vid-gallery .wrapper .vids video {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Make the video span the entire width */
+  height: 100%; /* Make the video span the entire height of its container */
   -o-object-fit: cover;
      object-fit: cover;
   transition: all 0.3s ease;
   max-height: 100%;
   display: block;
+  transform: none; /* Remove the scaling transform */
 }
 .vid-gallery .wrapper .vids.expanded {
   grid-column: span 3;
@@ -162,11 +184,28 @@ header h5 {
   height: 100%;
   transition: all 0.5s ease; /* Add transition for animation */
 }
-.vid-gallery .wrapper .vids:not(.expanded) video {
-  transform: scale(1); /* Initial state for non-expanded videos */
+
+/*video overlay */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
-.vid-gallery .wrapper .vids:hover video {
-  transform: scale(1.1); /* Scale up on hover */
+
+.vids:hover .video-overlay {
+  opacity: 1;
 }
 
 .gallery1 {
