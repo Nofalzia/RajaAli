@@ -214,7 +214,7 @@ header h5 {
   width: 100vw;
 }
 
-.Heading {
+.heading {
   font-size: 4rem;
   color: #FF1D50;
   position: absolute;
@@ -230,9 +230,9 @@ header h5 {
   display: flex;
   gap: 4vmin;
   position: absolute;
-  left: 35%;
+  left: 50%; /* Center the first image */
   top: 50%;
-  transform: translate(0%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -242,6 +242,8 @@ header h5 {
 @media screen and (max-width: 750px) {
   #image-track {
     left: 50% !important;
+    transform: translate(-50%, -50%);
+    gap: 2vmin;
   }
 }
 #image-track > .image {
@@ -283,4 +285,37 @@ header h5 {
     width: 32vmin;
     height: 45vmin;
   }
+}
+.contact-area {
+  background: #1B191B;
+  padding: 50px 0;
+}
+.contact-area .header {
+  color: #FF1D50;
+  text-align: center;
+  padding: 0.5px 0;
+}
+.contact-area .contact-links {
+  display: flex;
+  justify-content: center;
+}
+.contact-area .contact-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin: 0 20px;
+  transition: color 0.3s;
+}
+.contact-area .contact-links a:hover {
+  color: #FF1D50;
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+footer p {
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

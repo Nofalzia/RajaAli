@@ -1,18 +1,18 @@
 const track = document.getElementById("image-track");
-    const heading = document.getElementById("Heading");
+const heading = document.getElementById("Heading");
 
-    var trackRect = track.getBoundingClientRect();
-    var headingRect = heading.getBoundingClientRect();
+var trackRect = track.getBoundingClientRect();
+var headingRect = heading.getBoundingClientRect();
 
-    if (
-      trackRect.bottom > headingRect.top &&
-      trackRect.right > headingRect.left &&
-      trackRect.top < headingRect.bottom &&
-      trackRect.left < headingRect.right
-    ) {
-      heading.classList.add("selected");
-      console.log("nofal");
-    }
+if (
+  trackRect.bottom > headingRect.top &&
+  trackRect.right > headingRect.left &&
+  trackRect.top < headingRect.bottom &&
+  trackRect.left < headingRect.right
+) {
+  heading.classList.add("selected");
+}
+
 
     const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
 
@@ -76,7 +76,6 @@ const track = document.getElementById("image-track");
         if (!wrapper.classList.contains('expanded')) {
           // Expand the video
           wrapper.classList.add('expanded');
-          videos[index].play();
     
           // Hide other videos
           videoWrappers.forEach((otherWrapper, i) => {
@@ -85,10 +84,8 @@ const track = document.getElementById("image-track");
             }
           });
         } else {
-          // Shrink the video
+          // Minimize the video
           wrapper.classList.remove('expanded');
-          videos[index].pause();
-          videos[index].currentTime = 0;
     
           // Show other videos
           videoWrappers.forEach((otherWrapper) => {
@@ -101,5 +98,25 @@ const track = document.getElementById("image-track");
     // Autoplay the videos on page load
     videos.forEach((video) => {
       video.play();
+    });
+    
+    
+    // Pause videos when they leave the viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting && !isPlaying[index]) {
+          let video = entry.target;
+          video.play();
+          isPlaying[index] = true;
+        } else if (!entry.isIntersecting && isPlaying[index] && !videoWrappers[index].classList.contains('expanded')) {
+          let video = entry.target;
+          video.pause();
+          isPlaying[index] = false;
+        }
+      });
+    });
+    
+    videos.forEach((video) => {
+      observer.observe(video);
     });
     
