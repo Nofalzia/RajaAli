@@ -6,15 +6,12 @@
   <title>Raja Ali</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="./js/gallery-anim.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <script defer src="./external-libs/anim-on-scroll.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <nav>
     <ul>
       <li><a href="#video-wrapper">Home</a></li>
-      <li><a href="#gallery-wrapper">Stills</a></li>
+      <li><a href="#pics">Stills</a></li>
       <li><a href="#films">Films</a></li>
     </ul>
   </nav>
@@ -32,150 +29,134 @@
       <h5>VIDEOGRAPHY | PHOTOGRAPHY <br> || CONTENT CREATION || </h5>
     </header>
   </div>
+<div class="makes the nav bar stay up" id="pics"></div>
+<div class="gallery-container">
+  <div class="gallery">
+    <img src="./assets/image (1).jpg" alt="Image 1">
+    <img src="./assets/image (2).JPG" alt="Image 2">
+    <img src="./assets/image (4).JPG" alt="Image 3">
+    <img src="./assets/image (3).JPG" alt="Image 4">
+    <img src="./assets/image (8).JPG" alt="Image 5">
+    <img src="./assets/image (6).JPG" alt="Image 6">
+    <img src="./assets/image (7).JPG" alt="Image 7">
+    <img src="./assets/image (5).JPG" alt="Image 8">
+    <img src="./assets/image (9).JPG" alt="Image 9">
+  </div>
+</div>
 
-  <div class="gallery-wrapper" id="gallery-wrapper">
-    <div class="gallery1 DO-NOT-REMOVE-OR-IT-WILL-NOT-WORK"></div>
-    <h2 class="Heading hidden animate__fadeInDown" id="Heading">SHOTS.</h2>
-    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-      <img class="image" src="assets/1.jpg" draggable="false">
-      <img class="image" src="assets/2.jpg" draggable="false">
-      <img class="image" src="assets/3.jpg" draggable="false">
-      <img class="image" src="assets/4.jpg" draggable="false">
-      <img class="image" src="assets/5.jpg" draggable="false">
+    <div class="vid-gallery container" id="films">
+      <!-- Video Gallery Section -->
+      <div class="wrapper">
+        <!-- Row 1 -->
+        <div class="vids">
+          <div class="video-overlay">Outfitters</div>
+          <video autoplay muted loop>
+            <source src="./assets/v1.mp4" type="video/mp4">
+          </video>
+    </div>
+    <div class="vids">
+      <div class="video-overlay">Abdul Hannan</div>
+      <video autoplay muted loop>
+        <source src="./assets/v2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vids">
+      <div class="video-overlay">Aleeza</div>
+      <video autoplay muted loop>
+          <source src="./assets/v3.MP4" type="video/mp4">
+      </video>
+    </div>   
+    <!-- Row 2 -->
+    <div class="vids">
+      <div class="video-overlay">Uzair Jaswal</div>
+      <video autoplay muted loop>
+        <source src="./assets/v4.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vids">
+      <div class="video-overlay">GT-R</div>
+      <video autoplay muted loop>
+        <source src="./assets/v5.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vids">
+      <div class="video-overlay">Shamoon Ismail</div>
+      <video autoplay muted loop>
+        <source src="./assets/v6.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!-- Row 3 -->
+    <div class="vids">
+      <div class="video-overlay">Trust The Process</div>
+      <video autoplay muted loop>
+        <source src="./assets/v7.MP4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vids">
+      <div class="video-overlay">Follow For More</div>
+      <video autoplay muted loop>
+        <source src="./assets/v8.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vids">
+      <div class="video-overlay">Concert</div>
+      <video autoplay muted loop>
+        <source src="./assets/v9.MP4" type="video/mp4">
+      </video>
     </div>
   </div>
+</div>
 
-  <!--
-  <div class="vid-gallery container" id="films">
-    <h2>FILMS.</h2>
-    <div class="wrapper">
-      <div class="vids">
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div class="vids">
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div class="vids">
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+<!-- New Video Gallery Section -->
+<div class="vid-gallery full-width" id="new-gallery">
+  <div class="new-wrapper">
+    <!-- Row 1 new -->
+    <div class="vids">
+      <div class="video-overlay">Second Cup</div>
+      <video autoplay muted loop>
+        <source src="./assets/a.MP4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vids">
+      <div class="video-overlay">Azlan</div>
+      <video autoplay muted loop>
+        <source src="./assets/c.MP4" type="video/mp4">
+      </video>
+    </div>
+    <!-- Row 2 new -->
+    <div class="vids">
+      <div class="video-overlay">Air Uni</div>
+      <video autoplay muted loop>
+        <source src="./assets/e.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vids">
+      <div class="video-overlay">GIDS</div>
+      <video autoplay muted loop>
+        <source src="./assets/d.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!-- Row 3 new -->
+    <div class="vids">
+      <div class="video-overlay"></div>
+      <video autoplay muted loop>
+        <source src="./assets/b.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vids">
+      <div class="video-overlay"></div>
+      <video autoplay muted loop>
+        <source src="./assets/f.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
-  -->
-
-   <!-- ... (video-wrapper content) ... -->
-
-   <div class="gallery-wrapper" id="gallery-wrapper">
-    <!-- ... (gallery content) ... -->
-  </div>
-
-  <div class="vid-gallery container" id="films"> 
-    <!-- Video Gallery Section -->
-    <div class="wrapper">
-      <div class="vids">
-        <div class="video-overlay">Raja</div>
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div class="vids">
-        <div class="video-overlay">Raja</div>
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div class="vids">
-        <div class="video-overlay">Raja</div>
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <!-- Row 2 -->
-      <div class="vids">
-        <div class="video-overlay">Raja</div>
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div class="vids">
-        <div class="video-overlay">Raja</div>
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div class="vids">
-        <div class="video-overlay">Raja</div>
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <!-- Row 3 -->
-      <div class="vids">
-        <div class="video-overlay">Raja</div>
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div class="vids">
-        <div class="video-overlay">Raja</div>
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div class="vids">
-        <div class="video-overlay">Raja</div>
-        <video autoplay muted loop>
-          <source src="./assets/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </div>
-
-<!-- Follow Area -->
-<div class="follow-area">
-  <a class="social-link" href="https://www.instagram.com/your_instagram_username/" target="_blank" rel="noopener noreferrer">
-    <img src="assets/instagram.png" alt="Instagram">
-  </a>
-  <a class="social-link" href="https://www.tiktok.com/@your_tiktok_username" target="_blank" rel="noopener noreferrer">
-    <img src="assets/tiktok.png" alt="TikTok">
-  </a>
-  <a class="social-link" href="https://www.facebook.com/your_facebook_page/" target="_blank" rel="noopener noreferrer">
-    <img src="assets/facebook.png" alt="Facebook">
-  </a>
 </div>
 
 <!-- Footer -->
 <footer>
+  <p>Website Made By Nofal Zia</p>
   <p>&copy; | 2023 | Raja Ali | All Rights Reserved</p>
 </footer>
-
 
 </body>
 </html>

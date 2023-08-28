@@ -1,13 +1,13 @@
-// Variables
+/* Variables */
 $accent: #FF1D50;
 $background: #1B191B;
 $mobile: 450px;
 $tablet: 750px;
 
-// Import fonts
+/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
-// Base styles
+/* Base styles */
 body, html {
   margin: 0;
   padding: 0;
@@ -28,62 +28,58 @@ html {
   scroll-behavior: smooth;
 }
 
-// Navigation, Header, Content
-nav, header, .content {
-  position: absolute;
-  z-index: 1;
-}
-
+/* Navigation */
 nav {
-  top: 20px;
+  top: 10px;
   display: flex;
   justify-content: center;
   width: 100%;
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    li {
-      margin-right: 10px;
-    }
-    a {
-      text-decoration: none;
-      color: white;
-      font-size: 25px;
-      display: inline-block;
-      padding: 7px 5px;
-      border: 2px solid transparent;
-      transition: all 0.1s;
-      border-radius: 15%;
-      font-weight: normal;
-      &:hover,
-      &:active {
-        color: $blob-color-1;
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background-color: $accent;
-        transition: width 0.3s ease-in-out;
-      }
-      &:hover::after,
-      &:active::after {
-        width: 100%;
-      }
-    }
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  margin-right: 10px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  display: inline-block;
+  padding: 5px 3px;
+  border: 2px solid transparent;
+  transition: all 0.1s;
+  border-radius: 15%;
+  font-weight: normal;
+}
+nav ul li a:hover,
+nav ul li a:active {
+  color: #FF1D50;
+}
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #FF1D50;
+  transition: width 0.3s ease-in-out;
+}
+nav ul li a:hover::after,
+nav ul li a:active::after {
+  width: 100%;
+}
+nav ul:hover {
+  text-decoration: underline;
 }
 
+/* Header */
 header {
   top: calc(100vh - 50%);
   left: 50%;
@@ -101,7 +97,7 @@ header {
   }
 }
 
-// Video and Gallery
+/* Video and Gallery */
 .video-wrapper, .gallery-wrapper {
   position: relative;
   .background-video {
@@ -129,29 +125,6 @@ header {
   }
 }
 
-.gallery-wrapper {
-  .container {
-    margin-inline: auto;
-    width: calc(100vw - 20%);
-  }
-  .vid-gallery {
-    .wrapper {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: 2fr;
-      .vids {
-        height: 100%;
-        width: 100%;
-        video {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-  }
-}
-
 /* Video Gallery Section */
 .vid-gallery {
   margin-top: 100px;
@@ -166,36 +139,37 @@ header {
   .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0; /* Remove the gap between videos */
-    width: 100%; /* Make the wrapper span the entire width */
+    gap: 0;
+    width: 100%;
 
     .vids {
       position: relative;
       cursor: pointer;
-      margin: 0; /* Remove any margin */
-      height: auto; /* Reset the height */
+      margin: 0;
+      height: auto;
 
       video {
-        width: 100%; /* Make the video span the entire width */
-        height: 100%; /* Make the video span the entire height of its container */
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         transition: all 0.3s ease;
         max-height: 100%;
         display: block;
-        transform: none; /* Remove the scaling transform */
+        transform: none;
       }
 
       &.expanded {
         grid-column: span 3;
         video {
           height: 100%;
-          transition: all 0.5s ease; /* Add transition for animation */
+          transition: all 0.5s ease;
         }
       }
+    }
+  }
+}
 
-    }}}
-
-/*video overlay */
+/* Video Overlay */
 .video-overlay {
   position: absolute;
   top: 0;
@@ -218,130 +192,12 @@ header {
   opacity: 1;
 }
 
-
-
-
-
-// Additional styles
-.gallery1 {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
+.vids:hover {
+  z-index: 2;
+  transform: scale(1.5);
 }
 
-.heading {
-  font-size: 4rem;
-  color: $accent;
-  position: absolute;
-  left: 10%;
-  top: 50%;
-  transform: translate(0%, -50%);
-  z-index: 0;
-  rotate: 270deg;
-  margin: 0;
-}
-
-#image-track {
-  display: flex;
-  gap: 4vmin;
-  position: absolute;
-  left: 50%; /* Center the first image */
-  top: 50%;
-  transform: translate(-50%, -50%);
-  user-select: none;
-  z-index: 5;
-}
-
-@media screen and (max-width: $tablet) {
-  #image-track {
-    left: 50% !important;
-    transform: translate(-50%, -50%);
-    gap: 2vmin;
-  }
-}
-
-#image-track > .image {
-  width: 40vmin;
-  height: 56vmin;
-  object-fit: cover;
-  object-position: 100% center;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-.show {
-  opacity: 1;
-}
-
-@media screen and (max-width: $mobile) {
-  nav ul li a {
-    font-size: 16px; 
-  }
-
-  header h1 {
-    font-size: 40px; 
-  }
-
-  header h5 {
-    font-size: 10px; 
-  }
-
-  .gallery-wrapper .Heading {
-    font-size: 2rem;
-  }  
-
-  #image-track {
-    left: 50% !important;
-    transform: translate(-50%, -50%);
-    gap: 2vmin;
-  }
-
-  #image-track > .image {
-    width: 32vmin;
-    height: 45vmin;
-  }
-  
-}
-
-// Follow Area
-.follow-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-}
-
-.follow-heading {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.social-link {
-  display: inline-block;
-  margin: 0 15px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.social-link img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.social-link:hover {
-  transform: scale(1.1);
-}
-
-// Footer
+/* Footer */
 footer {
   background: black;
   color: white;

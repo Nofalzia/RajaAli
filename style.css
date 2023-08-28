@@ -1,6 +1,8 @@
+/* Global Styles */
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+
 body {
-  background: #1B191B;
+  background: #e9e9e9;
   width: 100vw;
   height: 150vh;
   margin: 0;
@@ -19,14 +21,16 @@ body, html {
   overflow-x: hidden;
 }
 
+/* Navigation */
 nav {
   position: absolute;
-  top: 20px;
+  top: 10px;
   z-index: 10000;
   display: flex;
   justify-content: center;
   width: 100%;
 }
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -34,24 +38,27 @@ nav ul {
   display: flex;
   justify-content: center;
 }
+
 nav ul li {
   margin-right: 10px;
 }
+
 nav ul a {
   text-decoration: none;
   color: white;
-  font-size: 25px;
+  font-size: 18px;
   display: inline-block;
   padding: 7px 5px;
   border: 2px solid transparent;
   transition: all 0.1s;
   border-radius: 15%;
   font-weight: normal;
-  /* Add the following pseudo-element */
 }
+
 nav ul a:hover, nav ul a:active {
-  color: #FF1D50; /* Change the color on hover */
+  color: #FF1D50;
 }
+
 nav ul a::after {
   content: "";
   position: absolute;
@@ -63,13 +70,16 @@ nav ul a::after {
   background-color: #FF1D50;
   transition: width 0.3s ease-in-out;
 }
+
 nav ul a:hover::after, nav ul a:active::after {
   width: 100%;
 }
+
 nav ul:hover {
   text-decoration: underline;
 }
 
+/* Header */
 header {
   position: absolute;
   top: calc(100vh - 50%);
@@ -79,24 +89,23 @@ header {
   z-index: 1;
   color: white;
 }
+
 header h1 {
-  font-size: 75px;
+  font-size: 55px;
   margin-bottom: 5px;
 }
+
 header h5 {
-  font-size: 17px;
+  font-size: 12px;
   font-weight: normal;
   margin-top: 5px;
 }
 
-.content {
-  position: relative;
-  z-index: 0;
-}
-
+/* Video Background */
 .video-wrapper {
   position: relative;
 }
+
 .video-wrapper .background-video {
   top: 0;
   left: 0;
@@ -105,13 +114,15 @@ header h5 {
   z-index: -1;
   overflow: hidden;
 }
+
 .video-wrapper .background-video video {
   width: 100%;
   height: 100vh;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 0;
 }
+
 .video-wrapper .background-overlay {
   position: absolute;
   top: 0;
@@ -122,70 +133,118 @@ header h5 {
   z-index: -1;
 }
 
-.gallery-wrapper {
-  position: relative;
+/* Photo Gallery */
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%; /* Add margin to the top */
+  margin-bottom: 10%; /* Add margin to the bottom */
+  margin-left: 10%;
+  margin-right: 10%;
 }
-.gallery-wrapper .container {
-  margin-inline: auto;
-  width: calc(100vw - 20%);
-}
-.gallery-wrapper .vid-gallery .wrapper {
+
+.gallery {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 2fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%; /* Ensure the grid spans the entire width */
+  max-width: 1200px; /* Set a maximum width if needed */
 }
-.gallery-wrapper .vid-gallery .wrapper .vids {
-  height: 100%;
+
+.gallery img {
   width: 100%;
+  height: auto; /* Let the height adjust according to aspect ratio */
+  object-fit: cover;
+  margin: 0 20; /* Remove top and bottom margin */
 }
-.gallery-wrapper .vid-gallery .wrapper .vids video {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+
+img{
+  transition: 0.5s;
+}
+
+img:hover {
+  transform: scale(1.08);
 }
 
 /* Video Gallery Section */
 .vid-gallery {
-  margin-top: 100px;
+  margin-top: 20px;
   text-align: center;
 }
+
 .vid-gallery h2 {
   font-size: 2rem;
   color: #FF1D50;
   margin-bottom: 20px;
 }
+
 .vid-gallery .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0; /* Remove the gap between videos */
   width: 100%; /* Make the wrapper span the entire width */
 }
+
 .vid-gallery .wrapper .vids {
   position: relative;
   cursor: pointer;
   margin: 0; /* Remove any margin */
   height: auto; /* Reset the height */
 }
+
 .vid-gallery .wrapper .vids video {
   width: 100%; /* Make the video span the entire width */
   height: 100%; /* Make the video span the entire height of its container */
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: all 0.3s ease;
   max-height: 100%;
   display: block;
   transform: none; /* Remove the scaling transform */
 }
+
 .vid-gallery .wrapper .vids.expanded {
   grid-column: span 3;
 }
+
 .vid-gallery .wrapper .vids.expanded video {
   height: 100%;
   transition: all 0.5s ease; /* Add transition for animation */
 }
 
-/*video overlay */
+/* Additional Styles for Full Width Video Gallery */
+.vid-gallery.full-width {
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0; /* Remove the margin */
+}
+
+.vid-gallery .new-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0; /* Remove the gap between videos */
+  width: 100%; /* Make the wrapper span the entire width */
+}
+
+.vid-gallery .new-wrapper .vids {
+  position: relative;
+  cursor: pointer;
+  margin: 0; /* Remove any margin */
+  height: auto; /* Reset the height */
+}
+
+.vid-gallery .new-wrapper .vids video {
+  width: 100%; /* Make the video span the entire width */
+  height: auto; /* Reset the height */
+  max-height: 100vh; /* Adjust the max height if needed */
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  display: block;
+  transform: none; /* Remove the scaling transform */
+}
+
+/* Video Overlay */
 .video-overlay {
   position: absolute;
   top: 0;
@@ -195,7 +254,7 @@ header h5 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 100%;
   font-weight: bold;
   color: white;
   background: rgba(0, 0, 0, 0.65);
@@ -208,114 +267,45 @@ header h5 {
   opacity: 1;
 }
 
-.gallery1 {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-}
-
-.heading {
-  font-size: 4rem;
-  color: #FF1D50;
-  position: absolute;
-  left: 10%;
-  top: 50%;
-  transform: translate(0%, -50%);
-  z-index: 0;
-  rotate: 270deg;
-  margin: 0;
-}
-
-#image-track {
-  display: flex;
-  gap: 4vmin;
-  position: absolute;
-  left: 50%; /* Center the first image */
-  top: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  z-index: 5;
-}
-
-@media screen and (max-width: 750px) {
-  #image-track {
-    left: 50% !important;
-    transform: translate(-50%, -50%);
-    gap: 2vmin;
-  }
-}
-#image-track > .image {
-  width: 40vmin;
-  height: 56vmin;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 100% center;
-     object-position: 100% center;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-.show {
-  opacity: 1;
-}
-
-@media screen and (max-width: 450px) {
-  nav ul li a {
-    font-size: 16px;
-  }
-  header h1 {
-    font-size: 40px;
-  }
-  header h5 {
-    font-size: 10px;
-  }
-  .gallery-wrapper .Heading {
-    font-size: 2rem;
-  }
-  #image-track {
-    left: 50% !important;
-    transform: translate(-50%, -50%);
-    gap: 2vmin;
-  }
-  #image-track > .image {
-    width: 32vmin;
-    height: 45vmin;
-  }
-}
-.contact-area {
-  background: #1B191B;
-  padding: 50px 0;
-}
-.contact-area .header {
-  color: #FF1D50;
-  text-align: center;
-  padding: 0.5px 0;
-}
-.contact-area .contact-links {
-  display: flex;
-  justify-content: center;
-}
-.contact-area .contact-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-  margin: 0 20px;
-  transition: color 0.3s;
-}
-.contact-area .contact-links a:hover {
-  color: #FF1D50;
-}
-
+/* Footer */
 footer {
-  background: black;
-  color: white;
+  background: #252525;
+  color: #ffffff;
   text-align: center;
   padding: 20px 0;
 }
+
 footer p {
   margin: 0;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  header h5 {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .video-overlay {
+    font-size: 75%;
+  }
+
+  p{
+    font-size: smaller;
+  }
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  header h5 {
+    font-size: 12px;
+  }
+}
