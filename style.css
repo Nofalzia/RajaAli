@@ -332,6 +332,7 @@ footer p {
     }
 
     u:hover {
+      font-weight: bold;
       font-size: 110%;
     }
     
