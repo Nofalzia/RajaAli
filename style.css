@@ -21,6 +21,25 @@ body, html {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a80000;
+  border-radius: 3px;
+}
+
+html {
+  scrollbar-color: #a80000 transparent; /* thumb color, track color */
+  scrollbar-width: thin; /* "thin" or "auto" */
+}
+
+
 /* Navigation */
 nav {
   position: absolute;
@@ -109,6 +128,7 @@ header h5 {
 
 .video-wrapper {
   position: relative;
+  background-color: #d4d4d4;
 }
 
 .video-wrapper .background-video {
@@ -194,6 +214,7 @@ img:hover {
   cursor: pointer;
   margin: 0; /* Remove any margin */
   height: auto; /* Reset the height */
+  background-color: #000000;
 }
 
 .vid-gallery .wrapper .vids video {
@@ -286,55 +307,62 @@ footer p {
   margin: 0;
 }
 
+u {
+  color: #d4d4d4;
+  transition: 0.3s;
+}
+
+u:hover {
+  font-weight: bold;
+  font-size: 110%;
+}
+
 /* Follow Me section */
-   .follow-container {
-      margin-top: 0px;
-      margin-bottom: 0px;
-      background-color: #1f1f1f;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-color: #1f1f1f;
-    }
+.follow-container {
+  margin: 0px 0px;
+  background-color: #1f1f1f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: #1f1f1f;
+  padding: 20px;
+}
 
-    .follow-heading {
-      font-weight: lighter;
-      color: #ffffff;
-      font-size: 170%;
-      margin-bottom: 10px;
-    }
+.follow-heading {
+  font-weight: lighter;
+  color: #ffffff;
+  font-size: 200%;
+  margin-bottom: 10px;
+}
 
-    .follow-buttons {
-      display: flex;
-    }
+.follow-buttons {
+  display: flex;
+}
 
-    .follow-button {
-      width: 50%;
-      height: 50%;
-      margin: 0 10px;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
+.follow-button {
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  margin: 0 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s; /* Added box-shadow transition */
+  background-color: #333; /* Darkened background */
+  border-radius: 50%; /* Made buttons circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .follow-icon {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.follow-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .follow-button:hover {
-      transform: scale(1.1);
-    }
+.follow-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Added a shadow on hover */
+}
 
-    u {
-      color: #d4d4d4;
-      transition: 0.3s;
-    }
-
-    u:hover {
-      font-weight: bold;
-      font-size: 110%;
-    }
     
 /* Media Queries */
 @media (max-width: 768px) {
