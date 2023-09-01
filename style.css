@@ -1,19 +1,6 @@
 /* Global Styles */
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
-body {
-  background: #d4d4d4;
-  width: 100vw;
-  height: 150vh;
-  margin: 0;
-  overflow-x: hidden;
-  font-family: "Work Sans", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 body, html {
   margin: 0;
   padding: 0;
@@ -21,33 +8,28 @@ body, html {
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #a80000;
-  border-radius: 3px;
+body {
+  background: #000000;
+  font-family: "Work Sans", sans-serif;
+  width: 100vw;
+  height: 150vh;
+  overflow-x: hidden;  
 }
 
 html {
-  scrollbar-color: #a80000 transparent; /* thumb color, track color */
-  scrollbar-width: thin; /* "thin" or "auto" */
+  scroll-behavior: smooth;
+  scrollbar-color: #a80000 transparent;
+  scrollbar-width: thin;
 }
-
 
 /* Navigation */
 nav {
   position: absolute;
   top: 10px;
   z-index: 10000;
+  width: 100%;
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 nav ul {
@@ -74,7 +56,8 @@ nav ul a {
   font-weight: normal;
 }
 
-nav ul a:hover, nav ul a:active {
+nav ul a:hover,
+nav ul a:active {
   color: #a80000;
 }
 
@@ -90,7 +73,8 @@ nav ul a::after {
   transition: width 0.3s ease-in-out;
 }
 
-nav ul a:hover::after, nav ul a:active::after {
+nav ul a:hover::after,
+nav ul a:active::after {
   width: 100%;
 }
 
@@ -128,7 +112,7 @@ header h5 {
 
 .video-wrapper {
   position: relative;
-  background-color: #d4d4d4;
+  background-color: #000000;
 }
 
 .video-wrapper .background-video {
@@ -162,32 +146,26 @@ header h5 {
 .gallery-container {
   display: flex;
   justify-content: center;
-  margin-top: 10%; /* Add margin to the top */
-  margin-bottom: 10%; /* Add margin to the bottom */
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 10% 10%;
 }
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  width: 100%; /* Ensure the grid spans the entire width */
-  max-width: 1200px; /* Set a maximum width if needed */
+  width: 100%;
+  max-width: 1200px;
 }
 
 .gallery img {
   width: 100%;
-  height: auto; /* Let the height adjust according to aspect ratio */
+  height: auto;
   object-fit: cover;
-  margin: 0 20; /* Remove top and bottom margin */
-}
-
-img{
+  margin: 0 20;
   transition: 0.5s;
 }
 
-img:hover {
+.gallery img:hover {
   transform: scale(1.08);
 }
 
@@ -205,27 +183,26 @@ img:hover {
 .vid-gallery .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0; /* Remove the gap between videos */
-  width: 100%; /* Make the wrapper span the entire width */
+  gap: 0;
+  width: 100%;
 }
 
 .vid-gallery .wrapper .vids {
   position: relative;
   cursor: pointer;
-  margin: 0; /* Remove any margin */
-  height: auto; /* Reset the height */
+  margin: 0;
+  height: auto;
   background-color: #000000;
 }
 
 .vid-gallery .wrapper .vids video {
-  width: 100%; /* Make the video span the entire width */
-  height: 100%; /* Make the video span the entire height of its container */
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   transition: all 0.3s ease;
   max-height: 100%;
   display: block;
-  transform: none; /* Remove the scaling transform */
 }
 
 .vid-gallery .wrapper .vids.expanded {
@@ -234,39 +211,38 @@ img:hover {
 
 .vid-gallery .wrapper .vids.expanded video {
   height: 100%;
-  transition: all 0.5s ease; /* Add transition for animation */
+  transition: all 0.5s ease;
 }
 
 /* Additional Styles for Full Width Video Gallery */
 .vid-gallery.full-width {
   width: 100vw;
   overflow-x: hidden;
-  margin: 0; /* Remove the margin */
+  margin: 0;
 }
 
 .vid-gallery .new-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0; /* Remove the gap between videos */
-  width: 100%; /* Make the wrapper span the entire width */
+  gap: 0;
+  width: 100%;
 }
 
 .vid-gallery .new-wrapper .vids {
   position: relative;
   cursor: pointer;
-  margin: 0; /* Remove any margin */
-  height: auto; /* Reset the height */
+  margin: 0;
+  height: auto;
 }
 
 .vid-gallery .new-wrapper .vids video {
-  width: 100%; /* Make the video span the entire width */
-  height: auto; /* Reset the height */
-  max-height: 100vh; /* Adjust the max height if needed */
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
   -o-object-fit: cover;
   object-fit: cover;
   transition: all 0.3s ease;
   display: block;
-  transform: none; /* Remove the scaling transform */
 }
 
 /* Video Overlay */
@@ -294,13 +270,10 @@ img:hover {
 
 /* Footer */
 footer {
-  background: #1f1f1f;
   color: #d4d4d4;
   text-align: center;
   padding: 15px 0;
-  border-color: #1f1f1f;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0;
 }
 
 footer p {
@@ -319,12 +292,10 @@ u:hover {
 
 /* Follow Me section */
 .follow-container {
-  margin: 0px 0px;
-  background-color: #1f1f1f;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-color: #1f1f1f;
   padding: 20px;
 }
 
@@ -340,13 +311,13 @@ u:hover {
 }
 
 .follow-button {
-  width: 50px; /* Adjust as needed */
-  height: 50px; /* Adjust as needed */
+  width: 50px;
+  height: 50px;
   margin: 0 10px;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s; /* Added box-shadow transition */
-  background-color: #333; /* Darkened background */
-  border-radius: 50%; /* Made buttons circular */
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #000000;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -360,36 +331,55 @@ u:hover {
 
 .follow-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Added a shadow on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-    
+/*scroll bar*/
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a80000;
+  border-radius: 3px;
+}
+
+html {
+  scrollbar-color: #a80000 transparent;
+  scrollbar-width: thin; 
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
-
   header h1 {
     font-size: 42px;
   }
-
   header h5 {
     font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
-
   .video-overlay {
     font-size: 75%;
   }
-
-  p{
+  p {
     font-size: smaller;
   }
-
   header h1 {
     font-size: 40px;
   }
-
   header h5 {
     font-size: 11px;
   }
