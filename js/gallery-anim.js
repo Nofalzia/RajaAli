@@ -1,42 +1,37 @@
-// Autoplay the videos on page load
-videos.forEach((video) => {
-  video.play();
-});
+document.addEventListener('DOMContentLoaded', function () {
+  const thumbnails = document.querySelectorAll('.thumbnail');
+  const videoPlayer = document.getElementById('video-player');
+  const videoPopup = document.querySelector('.video-popup');
+  const closePopupButton = document.getElementById('close-popup');
+  
+  // Hide the video player initially
+  videoPlayer.style.display = 'none';
+  
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener('click', () => {
+      const mediaFileName = thumbnail.getAttribute('data-media');
+      if (mediaFileName.endsWith('.mp4')) {
+        // If the clicked thumbnail is a video, set the video source
+        const videoSource = `assets/${mediaFileName}`;
+        videoPlayer.src = videoSource;
+        videoPlayer.style.display = 'block';
+        
+        // Programmatically play the video
+        videoPlayer.play().catch((error) => {
+          // Autoplay was prevented, you can handle this here
+          console.error('Autoplay prevented:', error);
+        });
 
-// Pause videos when they leave the viewport
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting && !isPlaying[index]) {
-      let video = entry.target;
-      video.play();
-      isPlaying[index] = true;
-    } else if (!entry.isIntersecting && isPlaying[index] && !videoWrappers[index].classList.contains('expanded')) {
-      let video = entry.target;
-      video.pause();
-      isPlaying[index] = false;
-    }
-  });
-});
-
-videos.forEach((video) => {
-  observer.observe(video);
-});
-
-const lazyVideos = document.querySelectorAll('video[data-src]');
-
-const lazyLoad = target => {
-  const io = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const video = entry.target;
-        video.src = video.getAttribute('data-src');
-        video.removeAttribute('data-src');
-        observer.disconnect();
-      }
+            // Show the video popup
+            videoPopup.style.display = 'flex';
+          }
+        });
+      });
+      
+      closePopupButton.addEventListener('click', () => {
+        videoPopup.style.display = 'none';
+        videoPlayer.pause();
+        videoPlayer.src = '';
+      });
+      
     });
-  });
-
-  io.observe(target);
-};
-
-lazyVideos.forEach(lazyLoad);

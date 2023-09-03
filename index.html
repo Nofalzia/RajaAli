@@ -29,8 +29,8 @@
     </header>
   </div>
 <div class="makes the nav bar stay up" id="pics"></div>
-<div class="gallery-container">
-  <div class="gallery">
+<div class="agallery-container">
+  <div class="agallery">
     <img src="./assets/image (1).jpg" alt="Image 1">
     <img src="./assets/image (2).JPG" alt="Image 2">
     <img src="./assets/image (4).JPG" alt="Image 3">
@@ -45,70 +45,68 @@
 
     <div class="vid-gallery container" id="films">
       <!-- Video Gallery Section -->
-      <div class="wrapper">
-        <!-- Row 1 -->
-        <div class="vids">
-          <div class="video-overlay">Outfitters</div>
-          <video autoplay muted loop preload="auto">
-            <source src="./assets/v1.mp4" type="video/mp4">
-          </video>
-    </div>
-    <div class="vids">
-      <div class="video-overlay">Abdul Hannan</div>
-      <video autoplay muted loop preload="auto">
-        <source src="./assets/v2.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="vids">
-      <div class="video-overlay">Aleeza</div>
-      <video autoplay muted loop preload="auto">
-        <source src="./assets/v3.mp4" type="video/mp4">
-      </video>
-    </div>   
-    <!-- Row 2 -->
-    <div class="vids">
-      <div class="video-overlay">Uzair Jaswal</div>
-      <video autoplay muted loop preload="auto">
-        <source src="./assets/v4.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="vids">
-      <div class="video-overlay">GT-R</div>
-      <video autoplay muted loop preload="auto">
-        <source src="./assets/v5.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="vids">
-      <div class="video-overlay">Shamoon Ismail</div>
-      <video autoplay muted loop preload="auto">
-        <source src="./assets/v6.mp4" type="video/mp4">
-      </video>
-    </div>
-    <!-- Row 3 -->
-    <div class="vids">
-      <div class="video-overlay">Trust The Process</div>
-      <video autoplay muted loop preload="none" data-src="./assets/v7.mp4">
-        <source src="./assets/v7.mp4" type="video/mp4">
-      </video>
-    </div>    
-    <div class="vids">
-      <div class="video-overlay">Follow For More</div>
-      <video autoplay muted loop preload="none" data-src="./assets/v8.mp4">
-        <source src="./assets/v8.mp4" type="video/mp4">
-      </video>
-    </div>    
-    <div class="vids">
-      <div class="video-overlay">Concert</div>
-      <video autoplay muted loop preload="none" data-src="./assets/v9.mp4">
-        <source src="./assets/v9.mp4" type="video/mp4">
-      </video>
-    </div>    
-  </div>
-</div>
+      <div class="gallery">
+        <div class="thumbnails">
+            <!--Row 1-->
+            <div class="thumbnail" data-media="v1.mp4">
+                <video src="Thumbnails/tv1.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <span class="expand-text">Expand</span>
+                </div>
+            </div><div class="thumbnail" data-media="v2.mp4">
+                <video src="Thumbnails/tv2.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <span class="expand-text">Expand</span>
+                </div>
+            </div><div class="thumbnail" data-media="v3.mp4">
+                <video src="Thumbnails/tv3.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <span class="expand-text">Expand</span>
+                </div>
+            </div>
+            
+            <!--Row 2-->
+            <div class="thumbnail" data-media="v4.mp4">
+                <video src="Thumbnails/tv4.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <span class="expand-text">Expand</span>
+                </div>
+            </div><div class="thumbnail" data-media="v5.mp4">
+                <video src="Thumbnails/tv5.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <span class="expand-text">Expand</span>
+                </div>
+            </div><div class="thumbnail" data-media="v6.mp4">
+                <video src="Thumbnails/tv6.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <span class="expand-text">Expand</span>
+                </div>
+            </div>
 
-<!-- New Video Gallery Section -->
-<div class="vid-gallery full-width" id="new-gallery">
-  <div class="new-wrapper">
+            <!--Row 3-->
+            <div class="thumbnail" data-media="v7.mp4">
+                <video src="Thumbnails/tv7.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <span class="expand-text">Expand</span>
+                </div>
+            </div><div class="thumbnail" data-media="v8.mp4">
+                <video src="Thumbnails/tv8.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <span class="expand-text">Expand</span>
+                </div>
+            </div><div class="thumbnail" data-media="v9.mp4">
+                <video src="Thumbnails/tv9.mp4" autoplay loop muted playsinline></video>
+                <div class="overlay">
+                    <span class="expand-text">Expand</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- New Video Gallery Section -->
+    <div class="vid-gallery full-width" id="new-gallery">
+      <div class="new-wrapper">
     <!-- Row 1 new -->
     <div class="vids">
       <div class="video-overlay">Second Cup</div>
@@ -149,28 +147,37 @@
         <source src="./assets/f.mp4" type="video/mp4">
       </video>
     </div>    
-    </div>
   </div>
+
+</div>
+<div class="video-popup">
+    <div class="media-container">
+        <video id="video-player" controls>
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+    <button id="close-popup">X</button>
+</div>
 </div>
 
-  <!-- Follow Me section -->
-  <div class="follow-container">
-    <h2 class="follow-heading">FOLLOW ME</h2>
-    <div class="follow-buttons">
-      <a class="follow-button" href="https://www.instagram.com/rajaali1.0/" target="_blank">
-        <img class="follow-icon" src="instagram.png" alt="Instagram">
-      </a>
-      <a class="follow-button" href="http://www.tiktok.com/@rajaali1.0" target="_blank">
-        <img class="follow-icon" src="tiktok.png" alt="TikTok">
-      </a>
-      <a class="follow-button" href="https://www.facebook.com/raja.m.ali17?mibextid=LQQJ4d" target="_blank">
+<!-- Follow Me section -->
+<div class="follow-container">
+  <h2 class="follow-heading">FOLLOW ME</h2>
+  <div class="follow-buttons">
+    <a class="follow-button" href="https://www.instagram.com/rajaali1.0/" target="_blank">
+      <img class="follow-icon" src="instagram.png" alt="Instagram">
+    </a>
+    <a class="follow-button" href="http://www.tiktok.com/@rajaali1.0" target="_blank">
+      <img class="follow-icon" src="tiktok.png" alt="TikTok">
+    </a>
+    <a class="follow-button" href="https://www.facebook.com/raja.m.ali17?mibextid=LQQJ4d" target="_blank">
         <img class="follow-icon" src="facebook.png" alt="Facebook">
       </a>
     </div>
   </div>
-
-<!-- Footer -->
-<footer>
+  
+  <!-- Footer -->
+  <footer>
   <p>Website Made By <a href="mailto:nofalzia4s@gmail.com"><u>Nofal Zia</u></a></p>
   <p>&copy; | 2023 | Raja Ali | All Rights Reserved</p>
 </footer>
