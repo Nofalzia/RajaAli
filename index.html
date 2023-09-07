@@ -103,62 +103,69 @@
         </div>
     </div>
     
+    <div class="video-popup">
+        <div class="media-container">
+            <video id="video-player" controls>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+        <button id="close-popup">X</button>
+    </div>
     
-    <!-- New Video Gallery Section -->
-    <div class="vid-gallery full-width" id="new-gallery">
-      <div class="new-wrapper">
+<!-- New Video Gallery Section -->
+<div class="vid-gallery full-width" id="new-gallery">
+  <div class="new-wrapper">
     <!-- Row 1 new -->
-    <div class="vids">
+    <div class="vids" data-video="a.mp4" data-thumbnail="ta.mp4">
       <div class="video-overlay">Second Cup</div>
-      <video autoplay muted loop preload="none" data-src="./assets/a.mp4">
+      <video autoplay muted loop preload="none" data-src="./assets/ta.mp4">
         <source src="./assets/a.mp4" type="video/mp4">
       </video>
-    </div>    
-    <div class="vids">
+    </div>
+    <div class="vids" data-video="c.mp4" data-thumbnail="tc.mp4">
       <div class="video-overlay">Azlan</div>
       <video autoplay muted loop preload="none" data-src="./assets/c.mp4">
         <source src="./assets/c.mp4" type="video/mp4">
       </video>
-    </div>    
+    </div>
     <!-- Row 2 new -->
-    <div class="vids">
+    <div class="vids" data-video="e.mp4" data-thumbnail="te.mp4">
       <div class="video-overlay">Air Uni</div>
       <video autoplay muted loop preload="none" data-src="./assets/e.mp4">
-        <source src="./assets/e.mp4" type="video/mp4">
+        <source src="./Thumbnails/te.mp4" type="video/mp4">
       </video>
-    </div>    
-    <div class="vids">
+    </div>
+    <div class="vids" data-video="d.mp4" data-thumbnail="td.mp4">
       <div class="video-overlay">GIDS</div>
       <video autoplay muted loop preload="none" data-src="./assets/d.mp4">
-        <source src="./assets/d.mp4" type="video/mp4">
+        <source src="./Thumbnails/td.mp4" type="video/mp4">
       </video>
-    </div>    
+    </div>
     <!-- Row 3 new -->
-    <div class="vids">
+    <div class="vids" data-video="b.mp4" data-thumbnail="tb.mp4">
       <div class="video-overlay"></div>
       <video autoplay muted loop preload="none" data-src="./assets/b.mp4">
-        <source src="./assets/b.mp4" type="video/mp4">
+        <source src="./Thumbnails/tb.mp4" type="video/mp4">
       </video>
     </div>
-    
-    <div class="vids">
+    <div class="vids" data-video="f.mp4" data-thumbnail="tf.mp4">
       <div class="video-overlay"></div>
       <video autoplay muted loop preload="none" data-src="./assets/f.mp4">
-        <source src="./assets/f.mp4" type="video/mp4">
+        <source src="./Thumbnails/tf.mp4" type="video/mp4">
       </video>
-    </div>    
-  </div>
-
-</div>
-<div class="video-popup">
-    <div class="media-container">
-        <video id="video-player" controls>
-            <source src="" type="video/mp4">
-        </video>
     </div>
-    <button id="close-popup">X</button>
+  </div>
 </div>
+
+<div class="video-popup-new"> 
+  <div class="media-container-new"> 
+    <video id="video-player-new" controls>
+      <source src="" type="video/mp4">
+    </video>
+  </div>
+  <button id="close-popup-new">X</button>
 </div>
+
 
 <!-- Follow Me section -->
 <div class="follow-container">
