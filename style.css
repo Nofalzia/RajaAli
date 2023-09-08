@@ -444,8 +444,8 @@ html {
   top: 50%;
   left: 50%;
   width: auto; /* Let the video adjust its width */
-  max-width: calc(100% - 50px); /* Set a max-width to leave a 25px border on both sides */
-  height: auto; /* Let the video adjust its height */
+  max-height: calc(100% - 50px); /* Set a max-width to leave a 25px border on both sides */
+  width: auto; /* Let the video adjust its height */
   transform: translate(-50%, -50%);
 }
 
@@ -500,7 +500,7 @@ html {
   display: none;
   /* Add other overlay styling as needed */
 }
- 
+
 /*For new gallery*/
 .video-popup-new {
   display: none;
