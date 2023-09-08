@@ -440,10 +440,13 @@ html {
 }
 
 #video-player {
-position: absolute;
-top:50%; left:50%;
-margin-right: -50%;
-transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto; /* Let the video adjust its width */
+  max-width: calc(100% - 50px); /* Set a max-width to leave a 25px border on both sides */
+  height: auto; /* Let the video adjust its height */
+  transform: translate(-50%, -50%);
 }
 
 #close-popup {
