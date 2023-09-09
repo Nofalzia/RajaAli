@@ -30,6 +30,11 @@ h2, h5, a, p {
   font-family: 'Gilroy Light', sans-serif;
 }
 
+h3{
+  color: #d4d4d4;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 body {
   background: #000000;
   font-family: 'Provicali', sans-serif;
@@ -301,6 +306,7 @@ header h5 {
 
 /* Footer */
 footer {
+  background-color: #151515;
   color: #d4d4d4;
   text-align: center;
   padding: 15px 0;
@@ -322,48 +328,199 @@ u:hover {
 }
 
 /* Follow Me section */
-.follow-container {
-  margin: 0;
+.two-column-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 3%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: left;
 }
 
-.follow-heading {
-  font-weight: lighter;
-  color: #ffffff;
-  font-size: 200%;
-  margin-bottom: 10px;
+.image-column {
+  flex: 1;
+  max-width: 55%;
+  box-sizing: border-box;
+}
+
+.text-column {
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  max-width: 45%;
+}
+
+.image-grid {
+  display: flex;
+  gap: 5%;
+}
+
+.image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 110%;
+  display: flex; /* Center contents vertically and horizontally */
+  justify-content: center;
+}
+
+.image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s; 
+}
+
+.image img:hover {
+  transform: scale(1.1); 
 }
 
 .follow-buttons {
   display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 10px;
 }
 
 .follow-button {
-  width: 50px;
-  height: 50px;
-  margin: 0 10px;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background-color: #000000;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  margin: 5px 0;
+  transition: transform 0.5s;
 
-.follow-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .follow-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); 
 }
+
+.follow-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.follow-buttons a {
+  text-decoration: none;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #a8000050; 
+  padding-left: 30px; 
+  padding-right: 30px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px; 
+  transition: background-color 0.2s; 
+}
+
+.button-wrapper:hover {
+  background-color: #a80000; 
+}
+
+.follow-text {
+  margin-left: 10px; 
+  color: #fff;
+}
+
+
+/* Add a media query for screens larger than 1024px width */
+@media screen and (min-width: 1025px) {
+  .follow-text {
+    font-size: 20px; 
+  }
+  .follow-heading {
+    font-size: 50px;
+    padding: 0%;
+  }
+  .text-column{
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+/* Media Query for Screens < 640px */
+@media screen and (max-width: 640px) {
+  .two-column-container {
+    flex-direction: column;
+  }
+
+  .image-column,
+  .text-column {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .image {
+    padding-bottom: 0;
+  }
+
+  .phone-hidden {
+    display: none;
+  }
+
+  .follow-heading {
+    text-align: center;
+  }
+
+  .follow-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .follow-button {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .follow-buttons a {
+    margin: 0 10px; 
+  }
+
+  .follow-buttons a .follow-icon {
+    width: 48px; 
+    height: 48px;
+  }
+
+  .follow-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .follow-icon:hover {
+    width: 50px;
+    height: 50px;
+  }
+
+  .follow-buttons p {
+    margin: 0; 
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-column p {
+    text-align: center;
+  }
+  
+  .button-wrapper {
+    padding: 0%;
+  }
+  .follow-text {
+    display: none;
+  }
+
+}
+
+
 
 /*scroll bar*/
 body, html {
@@ -437,7 +594,7 @@ html {
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   grid-row-gap: 0;
-  overflow-y: hidden; /* Add vertical scrollbar if necessary */
+  overflow-y: hidden; 
   overflow-x: hidden;
 }
 
@@ -531,7 +688,6 @@ html {
 }
 .video-popup-overlay {
   display: none;
-  /* Add other overlay styling as needed */
 }
 
 /*For new gallery*/
