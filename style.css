@@ -477,9 +477,8 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: auto; /* Let the video adjust its width */
-  max-height: calc(100% - 50px); /* Set a max-width to leave a 25px border on both sides */
-  width: auto; /* Let the video adjust its height */
+  max-width: calc(100% - 10px); 
+  max-height: calc(100% - 10px); 
   transform: translate(-50%, -50%);
 }
 
@@ -554,9 +553,8 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: auto; /* Let the video adjust its width */
-  max-width: calc(100% - 50px); /* Set a max-width to leave a 25px border on both sides */
-  height: auto; /* Let the video adjust its height */
+  max-width: calc(100% - 10px); 
+  max-height: calc(100% - 10px); 
   transform: translate(-50%, -50%);
 }
 
