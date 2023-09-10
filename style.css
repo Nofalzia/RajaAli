@@ -32,7 +32,14 @@ h2, h5, a, p {
 
 h3{
   color: #d4d4d4;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Provicali', sans-serif;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+b{
+  font-family: 'Gilroy Light', sans-serif;
+  letter-spacing: 0px;
 }
 
 body {
@@ -406,20 +413,26 @@ u:hover {
   text-decoration: none;
 }
 
-.button-wrapper {
+.button-wrapper-instagram , .button-wrapper-tiktok , .button-wrapper-facebook {
   display: flex;
   align-items: center;
   background-color: #a8000050; 
-  padding-left: 30px; 
-  padding-right: 30px; 
+  padding-left: 40px; 
+  padding-right: 40px; 
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px; 
   transition: background-color 0.2s; 
 }
 
-.button-wrapper:hover {
-  background-color: #a80000; 
+.button-wrapper-instagram:hover {
+  background-color: #f50056ab; 
+}
+.button-wrapper-tiktok:hover {
+  background-color: #252525ab; 
+}
+.button-wrapper-facebook:hover {
+  background-color: #5C7CFAab; 
 }
 
 .follow-text {
@@ -440,6 +453,12 @@ u:hover {
   .text-column{
     padding-left: 3%;
     padding-right: 3%;
+  }
+  .button-wrapper-instagram , .button-wrapper-tiktok , .button-wrapper-facebook{
+  padding-left: 80px; 
+  padding-right: 80px; 
+  padding-top: 15px;
+  padding-bottom: 15px;
   }
 }
 
@@ -511,7 +530,7 @@ u:hover {
     text-align: center;
   }
   
-  .button-wrapper {
+  .button-wrapper-instagram , .button-wrapper-tiktok , .button-wrapper-facebook {
     padding: 0%;
   }
   .follow-text {
