@@ -148,7 +148,7 @@ header h5 {
 
 .video-wrapper {
   position: relative;
-  background-color: #000000;
+  background-color: #ffffff00;
 }
 
 .video-wrapper .background-video {
@@ -577,7 +577,68 @@ html {
   }
 }
 
+/*
+ DO NOT TAKE THIS .THUMBNAILS
+ UNDER MEDIA QUERRY AREA
+ OTHERWISE IT RUINS THE GRID FOR
+ EITHER PHONE OR DESKTOP
+ !!!!!!!!!!!!!!!!!!!!!!!
+ */
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  grid-row-gap: 0;
+  overflow-y: hidden; 
+  overflow-x: hidden;
+}
+
+
 @media (max-width: 480px) {
+
+body{
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0) 0%, rgb(15, 15, 15) 100%);
+}
+  .agallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  .agallery img:nth-last-child(-n+3) {
+    display: none;
+  }
+
+  .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-row-gap: 10px;
+    margin: 10px;
+    margin-right: 5px;;
+    overflow-y: hidden; 
+    overflow-x: hidden;
+  }
+
+  .vid-gallery .wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    width: 100%;
+  }
+
+  .vid-gallery .new-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin: 5px;
+    margin-right: 20px ;
+    width: 100%;
+  }
+
   header {
     width: 280px;
   }
@@ -608,14 +669,6 @@ html {
   overflow-y: auto;
 }
 
-.thumbnails {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  grid-row-gap: 0;
-  overflow-y: hidden; 
-  overflow-x: hidden;
-}
 
 .thumbnail {
   margin: 0;
