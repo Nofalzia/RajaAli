@@ -629,6 +629,10 @@ body{
     gap: 0;
     width: 100%;
   }
+  .vids[data-thumbnail="tb.mp4"] {
+    /* This will hide tb.mp4*/
+    display: none;
+  }
 
   .vid-gallery .new-wrapper {
     display: grid;
