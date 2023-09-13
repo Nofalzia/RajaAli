@@ -8,6 +8,7 @@
   <script defer src="./js/gallery-anim.js"></script>
 </head>
 <body>
+  <script src="./js/lazy-load-video.js" defer></script>
   <nav>
     <ul>
       <li><a href="#video-wrapper">Home</a></li>
@@ -32,15 +33,108 @@
   <div class="makes the nav bar stay up" id="pics"></div>
   <div class="agallery-container">
     <div class="agallery">
-      <img src="./assets/image (1).jpg" alt="Image 1" width="200" height="250">
-      <img src="./assets/image (2).JPG" alt="Image 2" width="200" height="250">
-      <img src="./assets/image (3).JPG" alt="Image 3" width="200" height="250">
-      <img src="./assets/image (4).JPG" alt="Image 4" width="200" height="250">
-      <img src="./assets/image (5).JPG" alt="Image 5" width="200" height="250">
-      <img src="./assets/image (6).JPG" alt="Image 6" width="200" height="250">
-      <img src="./assets/image (7).JPG" alt="Image 7" width="200" height="250">
-      <img src="./assets/image (8).JPG" alt="Image 8" width="200" height="250">
-      <img src="./assets/image (9).JPG" alt="Image 9" width="200" height="250">
+      
+      <img src="./assets/image (1).jpg"
+      alt="Image 1"
+      srcset="./assets/image (1).jpg 200w,
+              ./assets/image (1)-large.jpg 600w,
+              ./assets/image (1)-extra-large.jpg 1200w"
+      sizes="(max-width: 600px) 200px,
+             (max-width: 1200px) 600px,
+             1200px"
+      width="100%"
+      height="auto">
+ 
+      
+      <img src="./assets/image (2).jpg"
+      alt="Image 2"
+      srcset="./assets/image (2).jpg 200w,
+              ./assets/image (2)-large.jpg 600w,
+              ./assets/image (2)-extra-large.jpg 1200w"
+      sizes="(max-width: 600px) 200px,
+             (max-width: 1200px) 600px,
+             1200px"
+      width="100%"
+      height="auto">
+ 
+      <img src="./assets/image (3).jpg"
+      alt="Image 3"
+      srcset="./assets/image (3).jpg 200w,
+              ./assets/image (3)-large.jpg 600w,
+              ./assets/image (3)-extra-large.jpg 1200w"
+      sizes="(max-width: 600px) 200px,
+             (max-width: 1200px) 600px,
+             1200px"
+      width="100%"
+      height="auto">
+ 
+      <img src="./assets/image (4).jpg"
+      alt="Image 4"
+      srcset="./assets/image (4).jpg 200w,
+              ./assets/image (4)-large.jpg 600w,
+              ./assets/image (4)-extra-large.jpg 1200w"
+      sizes="(max-width: 600px) 200px,
+             (max-width: 1200px) 600px,
+             1200px"
+      width="100%"
+      height="auto">
+ 
+      <img src="./assets/image (5).jpg"
+      alt="Image 5"
+      srcset="./assets/image (5).jpg 200w,
+              ./assets/image (5)-large.jpg 600w,
+              ./assets/image (5)-extra-large.jpg 1200w"
+      sizes="(max-width: 600px) 200px,
+             (max-width: 1200px) 600px,
+             1200px"
+      width="100%"
+      height="auto">
+ 
+      <img src="./assets/image (6).jpg"
+      alt="Image 6"
+      srcset="./assets/image (6).jpg 200w,
+              ./assets/image (6)-large.jpg 600w,
+              ./assets/image (6)-extra-large.jpg 1200w"
+      sizes="(max-width: 600px) 200px,
+             (max-width: 1200px) 600px,
+             1200px"
+      width="100%"
+      height="auto">
+ 
+      <img src="./assets/image (7).jpg"
+      alt="Image 7"
+      srcset="./assets/image (7).jpg 200w,
+              ./assets/image (7)-large.jpg 600w,
+              ./assets/image (7)-extra-large.jpg 1200w"
+      sizes="(max-width: 600px) 200px,
+             (max-width: 1200px) 600px,
+             1200px"
+      width="100%"
+      height="auto">
+ 
+      <img src="./assets/image (8).jpg"
+      alt="Image 8"
+      srcset="./assets/image (8).jpg 200w,
+              ./assets/image (8)-large.jpg 600w,
+              ./assets/image (8)-extra-large.jpg 1200w"
+      sizes="(max-width: 600px) 200px,
+             (max-width: 1200px) 600px,
+             1200px"
+      width="100%"
+      height="auto">
+ 
+      <img src="./assets/image (9).jpg"
+      alt="Image 9"
+      srcset="./assets/image (9).jpg 200w,
+              ./assets/image (9)-large.jpg 600w,
+              ./assets/image (9)-extra-large.jpg 1200w"
+      sizes="(max-width: 600px) 200px,
+             (max-width: 1200px) 600px,
+             1200px"
+      width="100%"
+      height="auto">
+ 
+
     </div>
   </div>
 
@@ -201,7 +295,6 @@
   <p>&copy; | 2023 | Raja Ali | All Rights Reserved</p>
 </footer>
 
-<script src="./js/lazy-load-video.js" defer></script>
 
 </body>
 </html>

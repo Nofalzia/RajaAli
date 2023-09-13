@@ -120,7 +120,7 @@ nav ul:hover {
 header {
   width: 340px;
   position: absolute;
-  top: calc(100vh - 60%);
+  top: calc(100vh - 62.5%);
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
