@@ -8,6 +8,27 @@
   <script defer src="./js/gallery-anim.js"></script>
 </head>
 <body>
+
+  <div class="loading-screen">
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.querySelector(".background-video video");
+      const loadingScreen = document.querySelector(".loading-screen");
+
+      video.pause();
+
+      video.addEventListener("canplaythrough", function () {
+
+        loadingScreen.style.display = "none";
+
+        video.play();
+      });
+    });
+  </script>
+
   <script src="./js/lazy-load-video.js" defer></script>
   <nav>
     <ul>
@@ -30,6 +51,7 @@
       <h5>An 18 year old aspiring filmmaker, director and content creator whos content revolves around Music Videos, DVCs, Concerts and much more.</h5>
     </header>
   </div>
+
   <div class="makes the nav bar stay up" id="pics"></div>
   <div class="agallery-container">
     <div class="agallery">
@@ -294,7 +316,6 @@
   <p>Website Made By <a href="mailto:nofalzia4s@gmail.com"><u>Nofal Zia</u></a></p>
   <p>&copy; | 2023 | Raja Ali | All Rights Reserved</p>
 </footer>
-
 
 </body>
 </html>

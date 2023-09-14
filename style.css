@@ -419,14 +419,23 @@ u:hover {
 
 .button-wrapper-instagram , .button-wrapper-tiktok , .button-wrapper-facebook {
   display: flex;
-  align-items: center;
-  background-color: #a8000050; 
+  align-items: center; 
   padding-left: 40px; 
   padding-right: 40px; 
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px; 
   transition: background-color 0.2s; 
+}
+
+.button-wrapper-instagram {
+  background-color: #f5005640; 
+}
+.button-wrapper-tiktok {
+  background-color: #25252540; 
+}
+.button-wrapper-facebook {
+  background-color: #5c7cfa40; 
 }
 
 .button-wrapper-instagram:hover {
@@ -805,4 +814,31 @@ body{
   padding: 5px 10px;
   cursor: pointer;
   z-index: 100;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+
+.loader {
+  border: 4px solid #252525; 
+  border-top: 4px solid #a80000; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
