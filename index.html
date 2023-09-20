@@ -12,24 +12,34 @@
   <div class="loading-screen">
     <div class="loader"></div>
     <div class="text-container">
-      <p>Note: This Site Runs Better On Desktop</p>
+      <p id="loading-text"></p>
     </div>
-  </div> 
+  </div>  
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const video = document.querySelector(".background-video video");
-      const loadingScreen = document.querySelector(".loading-screen");
+document.addEventListener("DOMContentLoaded", async function () {
+  const videos = document.querySelectorAll(".background-video video");
+  const loadingScreen = document.querySelector(".loading-screen");
 
-      video.pause();
-
+  // Create an array of promises to track each video's loading state
+  const videoPromises = Array.from(videos).map((video) => {
+    return new Promise((resolve) => {
       video.addEventListener("canplaythrough", function () {
-
-        loadingScreen.style.display = "none";
-
-        video.play();
+        resolve();
       });
     });
+  });
+
+  // Wait for all video promises to resolve (i.e., all videos are loaded)
+  await Promise.all(videoPromises);
+
+  // Once all videos are loaded, hide the loading screen and play the videos
+  loadingScreen.style.display = "none";
+  videos.forEach((video) => {
+    video.play();
+  });
+});
+
   </script>
 
   <script src="./js/lazy-load-video.js" defer></script>
