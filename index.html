@@ -17,29 +17,19 @@
   </div>  
 
   <script>
-document.addEventListener("DOMContentLoaded", async function () {
-  const videos = document.querySelectorAll(".background-video video");
-  const loadingScreen = document.querySelector(".loading-screen");
+   document.addEventListener("DOMContentLoaded", function () {
+      const video = document.querySelector(".background-video video");
+      const loadingScreen = document.querySelector(".loading-screen");
 
-  // Create an array of promises to track each video's loading state
-  const videoPromises = Array.from(videos).map((video) => {
-    return new Promise((resolve) => {
+      video.pause();
+
       video.addEventListener("canplaythrough", function () {
-        resolve();
+
+        loadingScreen.style.display = "none";
+
+        video.play();
       });
     });
-  });
-
-  // Wait for all video promises to resolve (i.e., all videos are loaded)
-  await Promise.all(videoPromises);
-
-  // Once all videos are loaded, hide the loading screen and play the videos
-  loadingScreen.style.display = "none";
-  videos.forEach((video) => {
-    video.play();
-  });
-});
-
   </script>
 
   <script src="./js/lazy-load-video.js" defer></script>
@@ -169,7 +159,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       width="100%"
       height="auto">
  
-
     </div>
   </div>
 
@@ -177,41 +166,50 @@ document.addEventListener("DOMContentLoaded", async function () {
       <!-- Video Gallery Section -->
       <div class="gallery">
         <div class="thumbnails">
-            <!--Row 1-->
-            <div class="thumbnail" data-media="v1.mp4">
-                <video src="Thumbnails/tv1.mp4" autoplay loop muted playsinline></video>
-                <div class="overlay">
-                    <span class="expand-text">| Nissan GTR |</span>
-                </div>
-            </div><div class="thumbnail" data-media="v2.mp4">
-                <video src="Thumbnails/tv2.mp4" autoplay loop muted playsinline></video>
-                <div class="overlay">
-                    <span class="expand-text">| Abdul Hannan |</span>
-                </div>
-            </div><div class="thumbnail" data-media="v3.mp4">
-                <video src="Thumbnails/tv3.mp4" autoplay loop muted playsinline></video>
-                <div class="overlay">
-                    <span class="expand-text">| HSY - Fuego |</span>
-                </div>
-            </div>
-            
-            <!--Row 2-->
-            <div class="thumbnail" data-media="v4.mp4">
-                <video src="Thumbnails/tv4.mp4" autoplay loop muted playsinline></video>
-                <div class="overlay">
-                    <span class="expand-text">| Uzair Jaswal |</span>
-                </div>
-            </div><div class="thumbnail" data-media="v5.mp4">
-                <video src="Thumbnails/tv5.mp4" autoplay loop muted playsinline></video>
-                <div class="overlay">
-                    <span class="expand-text">| Aleeza Tahir |</span>
-                </div>
-            </div><div class="thumbnail" data-media="v6.mp4">
-                <video src="Thumbnails/tv6.mp4" autoplay loop muted playsinline></video>
-                <div class="overlay">
-                    <span class="expand-text">| Shamoon Ismael |</span>
-                </div>
-            </div>
+<!--Row 1-->
+<div class="thumbnail" data-media="v1.mp4">
+  <video src="Thumbnails/tv1.mp4" autoplay loop muted playsinline poster="Thumbnails/tv1_poster.jpg"></video>
+  <div class="overlay">
+    <span class="expand-text">| Nissan GTR |</span>
+  </div>
+</div>
+
+<div class="thumbnail" data-media="v2.mp4">
+  <video src="Thumbnails/tv2.mp4" autoplay loop muted playsinline poster="Thumbnails/tv2_poster.jpg"></video>
+  <div class="overlay">
+    <span class="expand-text">| Abdul Hannan |</span>
+  </div>
+</div>
+
+<div class="thumbnail" data-media="v3.mp4">
+  <video src="Thumbnails/tv3.mp4" autoplay loop muted playsinline poster="Thumbnails/tv3_poster.jpg"></video>
+  <div class="overlay">
+    <span class="expand-text">| HSY - Fuego |</span>
+  </div>
+</div>
+
+<!--Row 2-->
+<div class="thumbnail" data-media="v4.mp4">
+  <video src="Thumbnails/tv4.mp4" autoplay loop muted playsinline poster="Thumbnails/tv4_poster.jpg"></video>
+  <div class="overlay">
+    <span class="expand-text">| Uzair Jaswal |</span>
+  </div>
+</div>
+
+<div class="thumbnail" data-media="v5.mp4">
+  <video src="Thumbnails/tv5.mp4" autoplay loop muted playsinline poster="Thumbnails/tv5_poster.jpg"></video>
+  <div class="overlay">
+    <span class="expand-text">| Aleeza Tahir |</span>
+  </div>
+</div>
+
+<div class="thumbnail" data-media="v6.mp4">
+  <video src="Thumbnails/tv6.mp4" autoplay loop muted playsinline poster="Thumbnails/tv6_poster.jpg"></video>
+  <div class="overlay">
+    <span class="expand-text">| Shamoon Ismael |</span>
+  </div>
+</div>
+
 
         </div>
     </div>
