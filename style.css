@@ -85,7 +85,7 @@ nav ul li {
 nav ul a {
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   display: inline-block;
   padding: 7px 5px;
   border: 2px solid transparent;
@@ -135,6 +135,13 @@ header {
 header h1 {
   font-size: 55px;
   margin-bottom: 5px;
+}
+
+.rotating-sentence {
+  font-family: 'Gilroy Light', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 5px;
 }
 
 header h5 {

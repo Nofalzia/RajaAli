@@ -72,3 +72,22 @@ document.addEventListener('DOMContentLoaded', function () {
     videoPlayerNew.src = '';
   });
 });
+
+// JavaScript code to rotate the sentences
+const sentenceContainer = document.getElementById("changing-sentence");
+const sentences = sentenceContainer.getElementsByTagName("span");
+let currentSentenceIndex = 0;
+
+function rotateSentence() {
+  sentences[currentSentenceIndex].style.display = "none";
+  currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length;
+  sentences[currentSentenceIndex].style.display = "inline";
+}
+
+// Hide all sentences except the first one initially
+for (let i = 1; i < sentences.length; i++) {
+  sentences[i].style.display = "none";
+}
+
+// Change sentence every 0.7 seconds (700 milliseconds)
+setInterval(rotateSentence, 700);
