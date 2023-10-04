@@ -89,5 +89,5 @@ for (let i = 1; i < sentences.length; i++) {
   sentences[i].style.display = "none";
 }
 
-// Change sentence every 3.5 seconds (3500 milliseconds)
-setInterval(rotateSentence, 3500);
+// Change sentence every 3 seconds (3000 milliseconds)
+setInterval(rotateSentence, 3000);
