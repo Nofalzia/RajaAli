@@ -920,3 +920,10 @@ font-weight:10;
   font-weight: bold;
   font-size: large;
 }
+
+.rotating-sentence span {
+  display: none;
+}
+.rotating-sentence span:first-child {
+  display: inline;
+}
