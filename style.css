@@ -216,6 +216,17 @@ header h5 {
   transform: scale(1.08);
 }
 
+@media (min-width: 768px) {
+  .agallery img {
+    filter: grayscale(20%); 
+  }
+
+  .agallery img:hover {
+    filter: grayscale(0%); 
+    transform: scale(1.03);
+  }
+}
+
 /* Video Gallery Section */
 .vid-gallery {
   text-align: center;
