@@ -214,6 +214,7 @@ header h5 {
 
 .agallery img:hover {
   transform: scale(1.08);
+  
 }
 
 @media (min-width: 768px) {
@@ -639,13 +640,15 @@ body{
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(0,0,0) 0%, rgb(15, 15, 15) 100%);
 }
-  .agallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    width: 100%;
-    max-width: 1200px;
-  }
+.agallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
   .agallery img:nth-last-child(-n+3) {
     display: none;
   }
@@ -705,7 +708,7 @@ body{
     color: #ffffff;
  }
  .follow-buttons{
-  margin-bottom: 2.5%;
+  margin-bottom: 8%;
  }
 
  .text-column {
@@ -713,6 +716,7 @@ body{
   position: relative;
 }
 
+/*
 .text-column::before {
   content: "";
   display: block;
@@ -734,6 +738,7 @@ body{
   75% { background-color: #6666662e; } 
   100% { background-color: #FF00002e; } 
 }
+*/
 
 h3{
   color: #ffffff;
