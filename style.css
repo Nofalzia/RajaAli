@@ -210,11 +210,41 @@ header h5 {
   object-fit: cover;
   margin: 0 20;
   transition: 0.5s;
+  border-radius: 5%;
 }
 
 .agallery img:hover {
   transform: scale(1.08);
-  
+  border-radius: 2.5%;
+}
+
+.image-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay p {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
 }
 
 @media (min-width: 768px) {
@@ -635,23 +665,30 @@ html {
 
 
 @media (max-width: 480px) {
-
-body{
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0) 0%, rgb(15, 15, 15) 100%);
-}
-.agallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-  .agallery img:nth-last-child(-n+3) {
-    display: none;
-  }
+    body {
+      background: rgb(0, 0, 0);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(15, 15, 15, 1) 100%);
+    }
+  
+    .agallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    .agallery img:nth-last-child(-n+3) {
+      display: block; /* Show the last 3 images */
+    }
+  
+    /* Adjust overlay styles for smaller screens */
+    .overlay p {
+      font-size: 14px; /* Smaller font size for overlay text */
+    }
+  
 
   .thumbnails {
     display: grid;
