@@ -44,8 +44,9 @@ h3 {
 PRE{
   color: #d4d4d4;
   font-family: 'Provicali', sans-serif;
-  letter-spacing: 1px;
-  text-align: center;
+  letter-spacing: 1.5px;
+  text-rendering: optimizeLegibility;
+  font-weight: 900;
 }
 
 b{
