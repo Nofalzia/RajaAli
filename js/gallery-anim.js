@@ -91,3 +91,19 @@ for (let i = 1; i < sentences.length; i++) {
 
 // Change sentence every 3.5 seconds (3500 milliseconds)
 setInterval(rotateSentence, 3500);
+
+let slideIndex = 0;
+
+function moveSlide(direction) {
+  const carousel = document.querySelector('.carousel');
+  const items = document.querySelectorAll('.carousel-item');
+  slideIndex += direction;
+
+  if (slideIndex < 0) {
+    slideIndex = items.length - 1;
+  } else if (slideIndex >= items.length) {
+    slideIndex = 0;
+  }
+
+  carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+}

@@ -210,12 +210,12 @@ header h5 {
   object-fit: cover;
   margin: 0 20;
   transition: 0.5s;
-  border-radius: 5%;
+  border-radius: 2%;
 }
 
 .agallery img:hover {
   transform: scale(1.08);
-  border-radius: 2.5%;
+  border-radius: 2%;
 }
 
 .image-container {
@@ -610,6 +610,12 @@ u:hover {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
 /*scroll bar*/
 body, html {
   margin: 0;
@@ -665,11 +671,20 @@ html {
 
 
 @media (max-width: 480px) {
-    body {
-      background: rgb(0, 0, 0);
-      background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(15, 15, 15, 1) 100%);
-    }
+  body {
+    background: rgb(0, 0, 0);
+ }
   
+   .video-wrapper .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgb(0, 0, 0) 100%);
+    z-index: 1;
+   }
+
     .agallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -699,6 +714,10 @@ html {
     margin-right: 5px;;
     overflow-y: hidden; 
     overflow-x: hidden;
+  }
+
+  video {
+    border-radius: 1%;
   }
 
   .vid-gallery .wrapper {
@@ -779,8 +798,8 @@ html {
 
 h3{
   color: #ffffff;
-  font-family: 'Provicali', sans-serif;
-  font-size: xx-larger;
+  font-family: 'Gilroy Light', sans-serif;
+  font-weight:10;
 }
 
 b{
@@ -788,6 +807,12 @@ color: #ffffff;
 font-family: 'Gilroy Light', sans-serif;
 font-weight:10;
 }
+
+.two-column-container{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgb(20, 20, 20, 1) 100%);
+  }
+
 
 }
 
