@@ -11,8 +11,13 @@
        url('fonts/Gilroy-Light.woff') format('woff');
 }
 
+*{
+  font-family: 'Gilroy Light', sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
+  font-family: 'Gilroy Light', sans-serif;
 }
 
 body, html {
@@ -25,32 +30,32 @@ body, html {
 
 h1{
   color: #FF0000;
-  font-family: 'Provicali', sans-serif;
+  font-family: 'Provicali', sans-serif !important;
   letter-spacing: 1.5px;
   text-rendering: optimizeLegibility;
 }
 
 h2, h5, a, p {
-  font-family: 'Gilroy Light', sans-serif;
+  font-family: 'Gilroy Light', sans-serif !important;
 }
 
 h3 {
   color: #d4d4d4;
-  font-family: 'Provicali', sans-serif;
+  font-family: 'Provicali', sans-serif !important;
   letter-spacing: 1px;
   text-align: center;
 }
 
 PRE{
   color: #d4d4d4;
-  font-family: 'Provicali', sans-serif;
+  font-family: 'Provicali', sans-serif !important;
   letter-spacing: 1.5px;
   text-rendering: optimizeLegibility;
   font-weight: 900;
 }
 
 b{
-  font-family: 'Gilroy Light', sans-serif;
+  font-family: 'Gilroy Light', sans-serif !important;
   letter-spacing: 0px;
 }
 
@@ -805,13 +810,19 @@ html {
 
 .text-column {
   margin-top: 10px;
-  width: 150%;
+  width: 100%;
   background: linear-gradient(90deg,
-   rgba(20, 20, 20, 0) -50%, 
-   #f5005610 35%,
-   rgba(20,20,20,0) 50%,
-   #5c7cfa10 65%,
-   rgba(20, 20, 20, 0) 150%);
+  rgba(20, 20, 20, 0) -50%, 
+  #f5005630 35%,
+  rgba(20, 20, 20, 1) 50%,
+  #5c7cfa30 65%,
+  rgba(20, 20, 20, 0) 150%);
+  
+}
+
+.two-column-container {
+ width: 100%;
+ padding: 0px;
 }
 
 b{
