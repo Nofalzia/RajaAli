@@ -34,7 +34,14 @@ h2, h5, a, p {
   font-family: 'Gilroy Light', sans-serif;
 }
 
-h3{
+h3 {
+  color: #d4d4d4;
+  font-family: 'Provicali', sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+PRE{
   color: #d4d4d4;
   font-family: 'Provicali', sans-serif;
   letter-spacing: 1px;
@@ -757,7 +764,6 @@ html {
   }
  .follow-heading {
     font-family: 'Gilroy Light', sans-serif;
-    text-align: justify;
     margin:20%;
     margin-bottom: 10px;
     margin-top: 16%;
@@ -796,16 +802,34 @@ html {
 }
 */
 
-h3{
-  color: #ffffff;
-  font-family: 'Gilroy Light', sans-serif;
-  font-weight:10;
+.text-column {
+  margin-top: 10px;
+  width: 150%;
+  background: linear-gradient(90deg,
+   rgba(20, 20, 20, 0) -50%, 
+   #f5005610 35%,
+   rgba(20,20,20,0) 50%,
+   #5c7cfa10 65%,
+   rgba(20, 20, 20, 0) 150%);
 }
 
 b{
 color: #ffffff;
 font-family: 'Gilroy Light', sans-serif;
-font-weight:10;
+font-size: 85%;
+line-height: 60px;
+}
+
+h3{
+  color: #ffffff;
+  font-family: 'Gilroy Light', sans-serif;
+  font-size: x-large;
+}
+
+PRE {
+  color: #ffffff;
+  font-family: 'Gilroy Light', sans-serif;
+  font-size: x-large;
 }
 
 .two-column-container{
