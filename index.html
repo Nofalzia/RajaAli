@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Raja Ali</title>
-    <link rel="stylesheet" href="style.css">
+    <meta
+      name="description"
+      content="Welcome to the portfolio of Raja Ali, you might know him as Raja Muhammad Ali or simply as Ali, Raja Ali is an aspiring filmmaker and content creator. Explore Raja's DVCs, Films, Reels and more. Contact Raja for projects."
+    />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="./js/gallery-anim.js"></script>
+    <script defer src="./js/lazy-load-video.js"></script>
   </head>
   <body>
-    
-    <title>Raja Ali - Video Creator</title>
-    <meta name="description" content="Welcome to the portfolio of Raja Ali, you might know him as Raja Muhammad Ali or simply as Ali, Raja Ali is an aspiring filmmaker and content creator. Explore Raja's DVCs, Films, Reels and more. Contact Raja for projects.">
-    
     <div class="loading-screen">
       <div class="loader"></div>
       <div class="text-container">
-      
         <div class="rotating-sentence" id="changing-sentence">
-        <span style="display: inline;">This Site Runs Better On Desktop</span>
-        <span>Sorry for the wait :(</span>
-        <span>Placing easter eggs across the site</span>
-        <span>Loading...</span>
+          <span style="display: inline">This Site Runs Better On Desktop</span>
+          <span>Sorry for the wait :(</span>
+          <span>Placing easter eggs across the site</span>
+          <span>Loading...</span>
+        </div>
       </div>
-
     </div>
-  </div> 
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const video = document.querySelector(".background-video video");
-      const loadingScreen = document.querySelector(".loading-screen");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const video = document.querySelector(".background-video video");
+        const loadingScreen = document.querySelector(".loading-screen");
 
-      video.pause();
-
-      video.addEventListener("canplaythrough", function () {
-
-        loadingScreen.style.display = "none";
-
-        video.play();
+        video.pause();
+        video.addEventListener("canplaythrough", function () {
+          loadingScreen.style.display = "none";
+          video.play();
+        });
       });
-    });
-  </script>
+    </script>
 
-  <script src="./js/lazy-load-video.js" defer></script>
-  <nav>
-    <ul>
-      <li><a href="#video-wrapper">Home</a></li>
-      <li><a href="#pics">Stills</a></li>
-      <li><a href="#films">Films</a></li>
-      <li class="phone-hidden"><a href="#contact">More</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="#video-wrapper">Home</a></li>
+        <li><a href="#pics">Stills</a></li>
+        <li><a href="#films">Films</a></li>
+        <li class="phone-hidden"><a href="#contact">More</a></li>
+      </ul>
+    </nav>
 
   <div class="video-wrapper" id="video-wrapper">
     <div class="background-video">
