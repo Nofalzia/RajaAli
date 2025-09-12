@@ -79,10 +79,22 @@
 
             if (video) {
                 video.pause();
-                video.addEventListener("canplaythrough", function () {
-                    loadingScreen.style.display = "none";
-                    video.play();
-                });
+video.addEventListener("loadeddata", function () {
+    video.muted = true; // ensure muted
+    video.play().then(() => {
+        // Video is playing, hide loader
+        loadingScreen.style.display = "none";
+    }).catch(() => {
+        // Autoplay blocked – wait for first tap
+        document.body.addEventListener("touchstart", () => {
+            video.play().then(() => {
+                loadingScreen.style.display = "none";
+            });
+        }, { once: true });
+    });
+});
+
+
                 
                 // Fallback in case video doesn't load
                 setTimeout(() => {
@@ -105,7 +117,7 @@
 
   <div class="video-wrapper" id="video-wrapper">
     <div class="background-video">
-      <video autoplay muted loop preload="auto" playsinline>
+      <video autoplay muted loop preload="auto" playsinline webkit-playsinline>
         <source src="./assets/background.mp4" type="video/mp4" media="(min-width: 601px)">
         <source src="./assets/background-mobile.mp4" type="video/mp4" media="(max-width: 600px)">
       </video>      
@@ -352,7 +364,7 @@
 </footer>
 
 <!-- Default Statcounter code for Raja Portfolio
-http://rajaali.netlify.app -->
+http://rajaali.netlify.app 
 <script type="text/javascript">
   var sc_project=13028891; 
   var sc_invisible=1; 
@@ -367,7 +379,7 @@ http://rajaali.netlify.app -->
   src="https://c.statcounter.com/13028891/0/5d1bf8ab/1/"
   alt="web counter"
   referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-  <!-- End of Statcounter Code -->
+  End of Statcounter Code -->
 
 </body>
 </html>
