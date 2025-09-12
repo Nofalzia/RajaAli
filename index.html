@@ -1,68 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raja Ali</title>
-    <meta
-      name="description"
-      content="Welcome to the portfolio of Raja Ali, you might know him as Raja Muhammad Ali or simply as Ali, Raja Ali is an aspiring filmmaker and content creator. Explore Raja's DVCs, Films, Reels and more. Contact Raja for projects."
-    />
-    <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raja Ali - Portfolio</title>
+    <meta name="description" content="Welcome to the portfolio of Raja Ali, an aspiring filmmaker and content creator.">
+    <style>
+        /* Critical CSS - Inlined to prevent render blocking */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
+        .loading-screen { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: #000; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; z-index: 9999; 
+        }
+        .loader {
+            border: 4px solid #252525; border-top: 4px solid #a80000; 
+            border-radius: 50%; width: 60px; height: 60px; 
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        nav {
+            position: absolute; top: 10px; z-index: 99; width: 100%;
+            display: flex; justify-content: center;
+        }
+        nav ul {
+            list-style: none; padding: 0; margin: 0; display: flex;
+            justify-content: center;
+        }
+        nav ul li { margin-right: 10px; }
+        nav ul a {
+            text-decoration: none; color: white; font-size: 16px;
+            display: inline-block; padding: 7px 5px; border: 2px solid transparent;
+            transition: all 0.1s; border-radius: 15%;
+        }
+        header {
+            width: 340px; position: absolute; top: calc(100vh - 62.5%);
+            left: 50%; transform: translateX(-50%); text-align: center;
+            z-index: 1; color: white;
+        }
+        .video-wrapper {
+            position: relative; background-color: #ffffff00; height: 100vh;
+        }
+        .background-video video {
+            width: 100%; height: 100vh; object-fit: cover;
+        }
+        .background-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); z-index: 1;
+        }
+    </style>
+    <!-- Preload important resources -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link rel="preload" href="./assets/background.mp4" as="video" type="video/mp4">
     <script defer src="./js/gallery-anim.js"></script>
     <script defer src="./js/lazy-load-video.js"></script>
-  </head>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const video = document.querySelector('.background-video video');
-      if (!video) return;
-  
-      // Check if screen width is 600px or less (mobile)
-      if (window.matchMedia('(max-width: 600px)').matches) {
-        // Change video source to mobile version
-        video.pause();
-        video.innerHTML = '<source src="./assets/background-mobile.mp4" type="video/mp4">';
-        video.load();
-  
-        // Try autoplay with retries (optional but helpful on mobile)
-        const tryPlay = (attempts = 3, delay = 500) => {
-          video.play().catch(() => {
-            if (attempts > 0) {
-              setTimeout(() => tryPlay(attempts - 1, delay), delay);
-            }
-          });
-        };
-        tryPlay();
-      }
-    });
-  </script>
-  
-
-  <body>
+</head>
+<body>
     <div class="loading-screen">
-      <div class="loader"></div>
-      <div class="text-container">
-        <div class="rotating-sentence" id="changing-sentence">
-          <span style="display: inline">This Site Runs Better On Desktop</span>
-          <span>Sorry for the wait :(</span>
-          <span>Placing easter eggs across the site</span>
-          <span>Loading...</span>
+        <div class="loader"></div>
+        <div class="text-container">
+            <div class="rotating-sentence" id="changing-sentence">
+                <span style="display: inline">Optimizing Your Experience</span>
+                <span>This Site Runs Better On Desktop</span>
+                <span>Almost ready...</span>
+            </div>
         </div>
-      </div>
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const video = document.querySelector(".background-video video");
-        const loadingScreen = document.querySelector(".loading-screen");
+        document.addEventListener("DOMContentLoaded", function () {
+            const video = document.querySelector(".background-video video");
+            const loadingScreen = document.querySelector(".loading-screen");
 
-        video.pause();
-        video.addEventListener("canplaythrough", function () {
-          loadingScreen.style.display = "none";
-          video.play();
+            if (video) {
+                video.pause();
+                video.addEventListener("canplaythrough", function () {
+                    loadingScreen.style.display = "none";
+                    video.play();
+                });
+                
+                // Fallback in case video doesn't load
+                setTimeout(() => {
+                    loadingScreen.style.display = "none";
+                }, 3000);
+            } else {
+                loadingScreen.style.display = "none";
+            }
         });
-      });
     </script>
 
     <nav>

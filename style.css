@@ -770,7 +770,7 @@ html {
   }
  .follow-heading {
     font-family: 'Gilroy Light', sans-serif;
-    margin:20%;
+    margin:15%;
     margin-bottom: 10px;
     margin-top: 16%;
     color: #ffffff;
@@ -811,12 +811,11 @@ html {
 .text-column {
   margin-top: 10px;
   width: 100%;
-  background: linear-gradient(90deg,
-  rgba(20, 20, 20, 0) -50%, 
-  #f5005630 35%,
-  rgba(20, 20, 20, 1) 50%,
-  #5c7cfa30 65%,
-  rgba(20, 20, 20, 0) 150%);
+  background: linear-gradient(180deg,
+  #00000030 -50%, 
+  rgb(0, 0, 0) 50%,
+  #00000030 65%,
+  #151515 150%);
   
 }
 
