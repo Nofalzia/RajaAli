@@ -37,4 +37,26 @@ document.addEventListener('DOMContentLoaded', function () {
   if (videoPoster) {
     videoPoster.addEventListener('click', loadAndPlayVideo);
   }
+
+  // --- Auto-pause off-screen videos for performance ---
+  const allVideos = document.querySelectorAll('video');
+  if ('IntersectionObserver' in window && allVideos.length > 0) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const vid = entry.target;
+        // Don't mess with the main background hero video or active popups if desired
+        if (vid.closest('.background-video') || vid.closest('.video-popup') || vid.closest('.video-popup-new')) return;
+
+        if (entry.isIntersecting) {
+          vid.play().catch(()=>{}); // Resume if visible
+        } else {
+          vid.pause(); // Pause if entirely off screen
+        }
+      });
+    }, { threshold: 0.1 });
+
+    allVideos.forEach(vid => {
+      videoObserver.observe(vid);
+    });
+  }
 });

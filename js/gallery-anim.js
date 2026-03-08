@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('DOMContentLoaded event fired');
     // Original video popup
     const thumbnails = document.querySelectorAll('.thumbnail');
     const videoPlayer = document.getElementById('video-player');
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     thumbnails.forEach((thumbnail) => {
       thumbnail.addEventListener('click', () => {
         const mediaFileName = thumbnail.getAttribute('data-media');
-        if (mediaFileName.endsWith('.mp4')) {
+        if (mediaFileName && mediaFileName.endsWith('.mp4')) {
           // If the clicked thumbnail is a video, set the video source
           const videoSource = `assets/${mediaFileName}`;
           videoPlayer.src = videoSource;
@@ -42,12 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const videoPopupNew = document.querySelector('.video-popup-new');
   const closePopupButtonNew = document.getElementById('close-popup-new');
 
-  // Hide the new video popup initially (add this line)
-  videoPopupNew.style.display = 'none';
+  // Hide the new video popup initially
+  if(videoPopupNew) videoPopupNew.style.display = 'none';
 
   videoThumbnails.forEach((thumbnail) => {
     thumbnail.addEventListener('click', () => {
-      const mediaSrc = thumbnail.querySelector('video').getAttribute('data-src');
+      const videoEl = thumbnail.querySelector('video');
+      const mediaSrc = videoEl ? videoEl.getAttribute('data-src') : null;
       if (mediaSrc) {
         // Set the new video source
         videoPlayerNew.src = mediaSrc;
@@ -65,12 +65,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  closePopupButtonNew.addEventListener('click', () => {
-    // Hide the new video popup, pause the new video, and reset the source
-    videoPopupNew.style.display = 'none';
-    videoPlayerNew.pause();
-    videoPlayerNew.src = '';
-  });
+  if (closePopupButtonNew) {
+    closePopupButtonNew.addEventListener('click', () => {
+      // Hide the new video popup, pause the new video, and reset the source
+      videoPopupNew.style.display = 'none';
+      videoPlayerNew.pause();
+      videoPlayerNew.src = '';
+    });
+  }
 });
 
 // JavaScript code to rotate the sentences
@@ -90,20 +92,69 @@ for (let i = 1; i < sentences.length; i++) {
 }
 
 // Change sentence every 3.5 seconds (3500 milliseconds)
-setInterval(rotateSentence, 3500);
+const sentenceInterval = setInterval(rotateSentence, 3500);
 
-let slideIndex = 0;
+// Stop interval when loader finishes
+document.addEventListener("DOMContentLoaded", function () {
+    const video = document.querySelector(".background-video video");
+    if (video) {
+        // Assume loaded quickly or watch state
+        video.addEventListener("play", () => clearInterval(sentenceInterval));
+    } else {
+        setTimeout(() => clearInterval(sentenceInterval), 3000);
+    }
+});
 
-function moveSlide(direction) {
-  const carousel = document.querySelector('.carousel');
-  const items = document.querySelectorAll('.carousel-item');
-  slideIndex += direction;
+// --- Carousel Logic for Stills --- 
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.getElementById('stills-track');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  let currentSlideIndex = 0;
 
-  if (slideIndex < 0) {
-    slideIndex = items.length - 1;
-  } else if (slideIndex >= items.length) {
-    slideIndex = 0;
+  if (track && prevBtn && nextBtn) {
+    const updateCarouselPosition = () => {
+      const item = track.querySelector('.carousel-item');
+      if (!item) return;
+      
+      const itemWidth = item.offsetWidth;
+      const gap = 20; // Matches flex gap in CSS
+      track.style.transform = `translateX(-${currentSlideIndex * (itemWidth + gap)}px)`;
+    };
+
+    nextBtn.addEventListener('click', () => {
+      const items = track.querySelectorAll('.carousel-item');
+      const itemsPerView = window.innerWidth > 900 ? 3 : 1;
+      
+      if (currentSlideIndex < items.length - itemsPerView) {
+        currentSlideIndex++;
+        updateCarouselPosition();
+      } else {
+        currentSlideIndex = 0;
+        updateCarouselPosition();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      const items = track.querySelectorAll('.carousel-item');
+      const itemsPerView = window.innerWidth > 900 ? 3 : 1;
+      
+      if (currentSlideIndex > 0) {
+        currentSlideIndex--;
+        updateCarouselPosition();
+      } else {
+        currentSlideIndex = items.length - itemsPerView;
+        updateCarouselPosition();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      const items = track.querySelectorAll('.carousel-item');
+      const itemsPerView = window.innerWidth > 900 ? 3 : 1;
+      if (currentSlideIndex > items.length - itemsPerView) {
+          currentSlideIndex = Math.max(0, items.length - itemsPerView);
+      }
+      updateCarouselPosition();
+    });
   }
-
-  carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
-}
+});

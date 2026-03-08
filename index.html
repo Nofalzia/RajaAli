@@ -56,7 +56,6 @@
     <!-- Preload important resources -->
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
-    <link rel="preload" href="./assets/background.mp4" as="video" type="video/mp4">
     <script defer src="./js/gallery-anim.js"></script>
     <script defer src="./js/lazy-load-video.js"></script>
 </head>
@@ -99,7 +98,7 @@ video.addEventListener("loadeddata", function () {
                 // Fallback in case video doesn't load
                 setTimeout(() => {
                     loadingScreen.style.display = "none";
-                }, 3000);
+                }, 1500);
             } else {
                 loadingScreen.style.display = "none";
             }
@@ -132,45 +131,22 @@ video.addEventListener("loadeddata", function () {
   <div class="makes the nav bar stay up" id="pics"></div>
 
   <div class="agallery-container">
-    <div class="agallery">    
-      
-      <div class="image-container">
-      <img src="./assets/image (1).webp" alt="Uzair Jaswal Concert By Raja Ali" srcset="./assets/image (1).webp 200w, ./assets/image (1)-large.webp 600w, ./assets/image (1)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto">
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev-btn">&#10094;</button>
+      <div class="agallery carousel-track" id="stills-track">    
+        <img src="./assets/image (1).webp" alt="Uzair Jaswal Concert By Raja Ali" srcset="./assets/image (1).webp 200w, ./assets/image (1)-large.webp 600w, ./assets/image (1)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
+        <img src="./assets/image (2).webp" alt="Raja Ali Film Maker, Videographer and Content Creator" srcset="./assets/image (2).webp 200w, ./assets/image (2)-large.webp 600w, ./assets/image (2)-extra-large.webp 1200w"  sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
+        <img src="./assets/image (3).webp" alt="Uzair Jaswal's Photography by Raja Ali" srcset="./assets/image (3).webp 200w, ./assets/image (3)-large.webp 600w, ./assets/image (3)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
+        <img src="./assets/image (4).webp" alt="Concert Pictures of Uzair Jaswal by Raja Muhammad Ali" srcset="./assets/image (4).webp 200w, ./assets/image (4)-large.webp 600w, ./assets/image (4)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
+        <img src="./assets/image (5).webp"  alt="Raja Muhammad Ali, Content Creator" srcset="./assets/image (5).webp 200w, ./assets/image (5)-large.webp 600w, ./assets/image (5)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
+        <img src="./assets/image (6).webp" alt="Abdul Hanan Concert clicks by Raja Ali" srcset="./assets/image (6).webp 200w, ./assets/image (6)-large.webp 600w, ./assets/image (6)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
+        <img src="./assets/image (7).webp" alt="Pakistani Photographer Raja Ali" srcset="./assets/image (7).webp 200w, ./assets/image (7)-large.webp 600w, ./assets/image (7)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
+        <img src="./assets/image (8).webp" alt="Abdul Hanan Islamabad Concert by Raja Ali" srcset="./assets/image (8).webp 200w, ./assets/image (8)-large.webp 600w, ./assets/image (8)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
+        <img src="./assets/image (9).webp" alt="Abdul Hannan Concert Shots by RAJA ALI" srcset="./assets/image (9).webp 200w, ./assets/image (9)-large.webp 600w, ./assets/image (9)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
       </div>
- 
-      <div class="image-container hide-mobile">
-      <img src="./assets/image (2).webp" alt="Raja Ali Film Maker, Videographer and Content Creator" srcset="./assets/image (2).webp 200w, ./assets/image (2)-large.webp 600w, ./assets/image (2)-extra-large.webp 1200w"  sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto">
+      <button class="carousel-btn next-btn">&#10095;</button>
     </div>
- 
-      <div class="image-container hide-mobile">
-      <img src="./assets/image (3).webp" alt="Uzair Jaswal's Photography by Raja Ali" srcset="./assets/image (3).webp 200w, ./assets/image (3)-large.webp 600w, ./assets/image (3)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto">
-    </div>
- 
-      <div class="image-container hide-mobile">
-      <img src="./assets/image (4).webp" alt="Concert Pictures of Uzair Jaswal by Raja Muhammad Ali" srcset="./assets/image (4).webp 200w, ./assets/image (4)-large.webp 600w, ./assets/image (4)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto">
-    </div>
- 
-    <div class="image-container">
-      <img src="./assets/image (5).webp"  alt="Raja Muhammad Ali, Content Creator" srcset="./assets/image (5).webp 200w, ./assets/image (5)-large.webp 600w, ./assets/image (5)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto">
-    </div>
- 
-      <div class="image-container hide-mobile">
-      <img src="./assets/image (6).webp" alt="Abdul Hanan Concert clicks by Raja Ali" srcset="./assets/image (6).webp 200w, ./assets/image (6)-large.webp 600w, ./assets/image (6)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto">
-    </div>
- 
-    <div class="image-container">
-      <img src="./assets/image (7).webp" alt="Pakistani Photographer Raja Ali" srcset="./assets/image (7).webp 200w, ./assets/image (7)-large.webp 600w, ./assets/image (7)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto">
-    </div>
-
-      <div class="image-container">
-      <img src="./assets/image (8).webp" alt="Abdul Hanan Islamabad Concert by Raja Ali" srcset="./assets/image (8).webp 200w, ./assets/image (8)-large.webp 600w, ./assets/image (8)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto">
-    </div>
-
-      <div class="image-container hide-mobile">
-      <img src="./assets/image (9).webp" alt="Abdul Hannan Concert Shots by RAJA ALI" srcset="./assets/image (9).webp 200w, ./assets/image (9)-large.webp 600w, ./assets/image (9)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto">
-    </div>
-    
-      </div>
+  </div>
     </div>
     
  
@@ -301,6 +277,8 @@ video.addEventListener("loadeddata", function () {
   </div>
 </div>
 
+<!-- New Video Gallery Section -->
+
 <div class="video-popup-new"> 
   <div class="media-container-new"> 
     <video id="video-player-new" controls>
@@ -309,51 +287,77 @@ video.addEventListener("loadeddata", function () {
   </div>
   <button id="close-popup-new">X</button>
 </div>
+<!-- Contact/More Section Wrapper -->
+<div id="contact">
 
-
-<!-- Follow Me section -->
-<div>
-  <div class="two-column-container" id="cotact">
-    <!-- Column 1: Image Grid -->
+<!-- Original Desktop Contact Section -->
+<div class="desktop-contact">
+  <div class="two-column-container" id="contact-desktop">
     <div class="image-column">
       <div class="image-grid">
-        <div class="image">
-          <img src="image1.jpg" alt="Image 1">
-        </div>
-        <div class="image">
-          <img src="image2.jpg" alt="Image 2">
-        </div>
-        <div class="image">
-          <img src="image3.jpg" alt="Image 3">
-        </div>
+        <div class="image"><img src="image1.jpg" alt="Image 1" loading="lazy"></div>
+        <div class="image"><img src="image2.jpg" alt="Image 2" loading="lazy"></div>
+        <div class="image"><img src="image3.jpg" alt="Image 3" loading="lazy"></div>
       </div>
     </div>
-  
-  <!-- Column 2: Text, Links, and Made by -->
-  <div class="text-column" id="contact">
-    <h3 class="follow-heading"><b>Got a project in mind?</b><br>
-      <PRE>HIT  ME  UP!</PRE></h3>
-    <div class="follow-buttons">
-      <a class="follow-button" href="https://www.instagram.com/rajaali1.0/" target="_blank">
-        <div class="button-wrapper-instagram">
-          <img class="follow-icon" src="instagram.png" alt="Instagram">
-          <span class="follow-text">Instagram</span>
-        </div>
-      </a>
-      <a class="follow-button" href="http://www.tiktok.com/@rajaali1.0" target="_blank">
-        <div class="button-wrapper-tiktok">
-          <img class="follow-icon" src="tiktok.png" alt="TikTok">
-          <span class="follow-text">TikTok</span>
-        </div>
-      </a>
-      <a class="follow-button" href="https://www.facebook.com/raja.m.ali17?mibextid=LQQJ4d" target="_blank">
-        <div class="button-wrapper-facebook">
-          <img class="follow-icon" src="facebook.png" alt="Facebook">
-          <span class="follow-text">Facebook</span>
-        </div>
-      </a>
+    <div class="text-column">
+      <h3 class="follow-heading"><b>Got a project in mind?</b><br><PRE>HIT  ME  UP!</PRE></h3>
+      <div class="follow-buttons">
+        <a class="follow-button" href="https://www.instagram.com/rajaali1.0/" target="_blank">
+          <div class="button-wrapper-instagram">
+            <img class="follow-icon" src="instagram.png" alt="Instagram" loading="lazy">
+            <span class="follow-text">Instagram</span>
+          </div>
+        </a>
+        <a class="follow-button" href="http://www.tiktok.com/@rajaali1.0" target="_blank">
+          <div class="button-wrapper-tiktok">
+            <img class="follow-icon" src="tiktok.png" alt="TikTok" loading="lazy">
+            <span class="follow-text">TikTok</span>
+          </div>
+        </a>
+        <a class="follow-button" href="https://www.facebook.com/raja.m.ali17?mibextid=LQQJ4d" target="_blank">
+          <div class="button-wrapper-facebook">
+            <img class="follow-icon" src="facebook.png" alt="Facebook" loading="lazy">
+            <span class="follow-text">Facebook</span>
+          </div>
+        </a>
+      </div>
+      <br><br>
     </div>
-    <br>  <br>
+  </div>
+</div>
+
+<!-- Contact/More Section Mobile -->
+<div class="contact-section mobile-contact">
+  <div class="contact-card">
+    <div class="contact-content">
+      <h3 class="contact-heading">Got a project in mind?</h3>
+      <h2 class="contact-subheading">HIT ME UP!</h2>
+      
+      <div class="social-links">
+        <a class="social-btn instagram" href="https://www.instagram.com/rajaali1.0/" target="_blank">
+          <img class="social-icon" src="instagram.png" alt="Instagram" loading="lazy">
+          <span class="social-text">Instagram</span>
+        </a>
+        <a class="social-btn tiktok" href="http://www.tiktok.com/@rajaali1.0" target="_blank">
+          <img class="social-icon" src="tiktok.png" alt="TikTok" loading="lazy">
+          <span class="social-text">TikTok</span>
+        </a>
+        <a class="social-btn facebook" href="https://www.facebook.com/raja.m.ali17?mibextid=LQQJ4d" target="_blank">
+          <img class="social-icon" src="facebook.png" alt="Facebook" loading="lazy">
+          <span class="social-text">Facebook</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="contact-visual">
+      <div class="visual-grid">
+        <img src="image1.jpg" alt="Raja Ali Portrait" loading="lazy">
+        <img src="image2.jpg" alt="Raja Ali Portrait" loading="lazy">
+        <img src="image3.jpg" alt="Raja Ali Portrait" loading="lazy">
+      </div>
+    </div>
+  </div>
   </div>
 </div>
   
