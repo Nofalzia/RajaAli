@@ -105,56 +105,104 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// --- Carousel Logic for Stills --- 
+// --- MODERN 3D CAROUSEL LOGIC ---
 document.addEventListener("DOMContentLoaded", function () {
   const track = document.getElementById('stills-track');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  let currentSlideIndex = 0;
+  if (!track) return;
 
-  if (track && prevBtn && nextBtn) {
-    const updateCarouselPosition = () => {
-      const item = track.querySelector('.carousel-item');
-      if (!item) return;
-      
-      const itemWidth = item.offsetWidth;
-      const gap = 20; // Matches flex gap in CSS
-      track.style.transform = `translateX(-${currentSlideIndex * (itemWidth + gap)}px)`;
-    };
+  const items = Array.from(track.querySelectorAll('.card-carousel-item'));
+  const prevBtn = document.querySelector('.card-carousel-container .prev-btn');
+  const nextBtn = document.querySelector('.card-carousel-container .next-btn');
+  const dots = Array.from(document.querySelectorAll('#stills-pagination .dot'));
 
-    nextBtn.addEventListener('click', () => {
-      const items = track.querySelectorAll('.carousel-item');
-      const itemsPerView = window.innerWidth > 900 ? 3 : 1;
-      
-      if (currentSlideIndex < items.length - itemsPerView) {
-        currentSlideIndex++;
-        updateCarouselPosition();
+  let currentIndex = 0;
+  const totalItems = items.length;
+
+  function updateCarousel() {
+    items.forEach((item, index) => {
+      // Remove all state classes
+      item.classList.remove('active', 'prev', 'next', 'hidden-left', 'hidden-right');
+
+      if (index === currentIndex) {
+        item.classList.add('active');
+      } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
+        item.classList.add('prev');
+      } else if (index === (currentIndex + 1) % totalItems) {
+        item.classList.add('next');
       } else {
-        currentSlideIndex = 0;
-        updateCarouselPosition();
+        // Determine whether to hide left or right based on shortest path
+        let diff = (index - currentIndex + totalItems) % totalItems;
+        if (diff > totalItems / 2) {
+          item.classList.add('hidden-left');
+        } else {
+          item.classList.add('hidden-right');
+        }
       }
     });
 
-    prevBtn.addEventListener('click', () => {
-      const items = track.querySelectorAll('.carousel-item');
-      const itemsPerView = window.innerWidth > 900 ? 3 : 1;
-      
-      if (currentSlideIndex > 0) {
-        currentSlideIndex--;
-        updateCarouselPosition();
+    // Update pagination dots
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.add('active');
       } else {
-        currentSlideIndex = items.length - itemsPerView;
-        updateCarouselPosition();
+        dot.classList.remove('active');
       }
-    });
-
-    window.addEventListener('resize', () => {
-      const items = track.querySelectorAll('.carousel-item');
-      const itemsPerView = window.innerWidth > 900 ? 3 : 1;
-      if (currentSlideIndex > items.length - itemsPerView) {
-          currentSlideIndex = Math.max(0, items.length - itemsPerView);
-      }
-      updateCarouselPosition();
     });
   }
+
+  function goNext() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarousel();
+  }
+
+  function goPrev() {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateCarousel();
+  }
+
+  // Button Listeners
+  if (nextBtn) nextBtn.addEventListener('click', goNext);
+  if (prevBtn) prevBtn.addEventListener('click', goPrev);
+
+  // Pagination Dot Listeners
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      updateCarousel();
+    });
+  });
+
+  // Click on side cards to bring them to center
+  items.forEach((item, index) => {
+    item.addEventListener('click', () => {
+       if (item.classList.contains('prev') || item.classList.contains('next')) {
+          currentIndex = index;
+          updateCarousel();
+       }
+    });
+  });
+
+  // --- SWIPE GESTURE SUPPORT (MOBILE) ---
+  let startX = 0;
+  let endX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    if (startX - endX > 50) {
+      goNext(); // Swiped left
+    } else if (endX - startX > 50) {
+      goPrev(); // Swiped right
+    }
+  });
+
+  // Initialize the carousel
+  updateCarousel();
 });
+

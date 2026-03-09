@@ -130,21 +130,76 @@ video.addEventListener("loadeddata", function () {
 
   <div class="makes the nav bar stay up" id="pics"></div>
 
-  <div class="agallery-container">
-    <div class="carousel-wrapper">
-      <button class="carousel-btn prev-btn">&#10094;</button>
-      <div class="agallery carousel-track" id="stills-track">    
-        <img src="./assets/image (1).webp" alt="Uzair Jaswal Concert By Raja Ali" srcset="./assets/image (1).webp 200w, ./assets/image (1)-large.webp 600w, ./assets/image (1)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
-        <img src="./assets/image (2).webp" alt="Raja Ali Film Maker, Videographer and Content Creator" srcset="./assets/image (2).webp 200w, ./assets/image (2)-large.webp 600w, ./assets/image (2)-extra-large.webp 1200w"  sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
-        <img src="./assets/image (3).webp" alt="Uzair Jaswal's Photography by Raja Ali" srcset="./assets/image (3).webp 200w, ./assets/image (3)-large.webp 600w, ./assets/image (3)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
-        <img src="./assets/image (4).webp" alt="Concert Pictures of Uzair Jaswal by Raja Muhammad Ali" srcset="./assets/image (4).webp 200w, ./assets/image (4)-large.webp 600w, ./assets/image (4)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
-        <img src="./assets/image (5).webp"  alt="Raja Muhammad Ali, Content Creator" srcset="./assets/image (5).webp 200w, ./assets/image (5)-large.webp 600w, ./assets/image (5)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
-        <img src="./assets/image (6).webp" alt="Abdul Hanan Concert clicks by Raja Ali" srcset="./assets/image (6).webp 200w, ./assets/image (6)-large.webp 600w, ./assets/image (6)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
-        <img src="./assets/image (7).webp" alt="Pakistani Photographer Raja Ali" srcset="./assets/image (7).webp 200w, ./assets/image (7)-large.webp 600w, ./assets/image (7)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
-        <img src="./assets/image (8).webp" alt="Abdul Hanan Islamabad Concert by Raja Ali" srcset="./assets/image (8).webp 200w, ./assets/image (8)-large.webp 600w, ./assets/image (8)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
-        <img src="./assets/image (9).webp" alt="Abdul Hannan Concert Shots by RAJA ALI" srcset="./assets/image (9).webp 200w, ./assets/image (9)-large.webp 600w, ./assets/image (9)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy" class="carousel-item">
+  <div class="card-carousel-section" id="stills">
+    <div class="card-carousel-container">
+      <button class="carousel-nav-btn prev-btn" aria-label="Previous image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div class="card-carousel-track" id="stills-track">
+        <!-- Card 1 -->
+        <div class="card-carousel-item">
+          <img src="./assets/image (1).webp" alt="Uzair Jaswal Concert By Raja Ali" srcset="./assets/image (1).webp 200w, ./assets/image (1)-large.webp 600w, ./assets/image (1)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy">
+          <div class="card-overlay"><span class="card-text">Live Performance</span></div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card-carousel-item">
+          <img src="./assets/image (2).webp" alt="Raja Ali Film Maker, Videographer and Content Creator" srcset="./assets/image (2).webp 200w, ./assets/image (2)-large.webp 600w, ./assets/image (2)-extra-large.webp 1200w"  sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy">
+          <div class="card-overlay"><span class="card-text">Uzair Jaswal Concert</span></div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card-carousel-item">
+          <img src="./assets/image (3).webp" alt="Uzair Jaswal's Photography by Raja Ali" srcset="./assets/image (3).webp 200w, ./assets/image (3)-large.webp 600w, ./assets/image (3)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy">
+          <div class="card-overlay"><span class="card-text">Behind The Scenes</span></div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card-carousel-item">
+          <img src="./assets/image (4).webp" alt="Concert Pictures of Uzair Jaswal by Raja Muhammad Ali" srcset="./assets/image (4).webp 200w, ./assets/image (4)-large.webp 600w, ./assets/image (4)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy">
+          <div class="card-overlay"><span class="card-text">Endless Beginnings</span></div>
+        </div>
+        <!-- Card 5 -->
+        <div class="card-carousel-item">
+          <img src="./assets/image (5).webp"  alt="Raja Muhammad Ali, Content Creator" srcset="./assets/image (5).webp 200w, ./assets/image (5)-large.webp 600w, ./assets/image (5)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy">
+          <div class="card-overlay"><span class="card-text">Cinematography</span></div>
+        </div>
+        <!-- Card 6 -->
+        <div class="card-carousel-item">
+          <img src="./assets/image (6).webp" alt="Abdul Hanan Concert clicks by Raja Ali" srcset="./assets/image (6).webp 200w, ./assets/image (6)-large.webp 600w, ./assets/image (6)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy">
+          <div class="card-overlay"><span class="card-text">Portrait Mode</span></div>
+        </div>
+        <!-- Card 7 -->
+        <div class="card-carousel-item">
+          <img src="./assets/image (7).webp" alt="Pakistani Photographer Raja Ali" srcset="./assets/image (7).webp 200w, ./assets/image (7)-large.webp 600w, ./assets/image (7)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy">
+          <div class="card-overlay"><span class="card-text">Abdul Hannan Concert</span></div>
+        </div>
+        <!-- Card 8 -->
+        <div class="card-carousel-item">
+          <img src="./assets/image (8).webp" alt="Abdul Hanan Islamabad Concert by Raja Ali" srcset="./assets/image (8).webp 200w, ./assets/image (8)-large.webp 600w, ./assets/image (8)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy">
+          <div class="card-overlay"><span class="card-text">Islamabad Vibes</span></div>
+        </div>
+        <!-- Card 9 -->
+        <div class="card-carousel-item">
+          <img src="./assets/image (9).webp" alt="Abdul Hannan Concert Shots by RAJA ALI" srcset="./assets/image (9).webp 200w, ./assets/image (9)-large.webp 600w, ./assets/image (9)-extra-large.webp 1200w" sizes="(max-width: 600px) 200px, (max-width: 1200px) 600px, 1200px" width="100%" height="auto" loading="lazy">
+          <div class="card-overlay"><span class="card-text">On Stage</span></div>
+        </div>
       </div>
-      <button class="carousel-btn next-btn">&#10095;</button>
+
+      <button class="carousel-nav-btn next-btn" aria-label="Next image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+
+    <!-- Pagination dots -->
+    <div class="carousel-pagination" id="stills-pagination">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
   </div>
     </div>
